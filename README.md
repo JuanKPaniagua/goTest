@@ -1,2 +1,2 @@
 # goTest
-FOr tetsing Go conections
+For tetsing Go conections
