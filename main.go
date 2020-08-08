@@ -27,5 +27,7 @@ func handler(writer http.ResponseWriter, request *http.Request) {
 
 func main() {
     http.HandleFunc("/book/", handler)
-    http.ListenAndServe(":"+os.Getenv("PORT"), nil)
+    if err := http.ListenAndServe(":8080", nil); err != nil {
+        panic(err)
+    }
 }
