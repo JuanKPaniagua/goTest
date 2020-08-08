@@ -17,6 +17,7 @@ func find(x string) int {
 
 func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
     id := path.Base(r.URL.Path)
+	var value
     checkError("Parse error", err)
 	if id == "" {
 		value := books;
