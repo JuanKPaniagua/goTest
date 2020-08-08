@@ -22,7 +22,6 @@ func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
 		dataJson, err := json.Marshal(books)
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(dataJson)
-		return
 	}else{
 		i := find(id)
 		if i == -1 {
@@ -31,7 +30,6 @@ func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
 		dataJson, err := json.Marshal(books[i])
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(dataJson)
-		return
 	}
     return
 }
