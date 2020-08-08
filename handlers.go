@@ -17,15 +17,16 @@ func find(x string) int {
 
 func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
     id := path.Base(r.URL.Path)
+	value := books
     checkError("Parse error", err)
 	if id == "" {
-		value := books;
+		value = books;
 	}else{
 		i := find(id)
 		if i == -1 {
 			return
 		}
-		value := books[i];
+		value = books[i];
 	}
 	dataJson, err := json.Marshal(value)
 	w.Header().Set("Content-Type", "application/json")
