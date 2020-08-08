@@ -18,7 +18,7 @@ func find(x string) int {
 func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
     id := path.Base(r.URL.Path)
     checkError("Parse error", err)
-	if id == ""{
+	if id == "" {
 		dataJson, err := json.Marshal(books)
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(dataJson)
@@ -27,9 +27,9 @@ func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
 		if i == -1 {
 			return
 		}
-		dataJson, err := json.Marshal(books[i])
+		dataJson2, err := json.Marshal(books[i])
 		w.Header().Set("Content-Type", "application/json")
-		w.Write(dataJson)
+		w.Write(dataJson2)
 	}
     return
 }
