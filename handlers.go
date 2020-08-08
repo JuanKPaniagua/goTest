@@ -27,7 +27,7 @@ func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
 		if i == -1 {
 			return
 		}
-		dataJson, err := json.Marshal(books[i])
+		dataJson, err = json.Marshal(books[i])
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(dataJson)
 	}
