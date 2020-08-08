@@ -19,9 +19,7 @@ func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
     id := path.Base(r.URL.Path)
 	value := books
     checkError("Parse error", err)
-	if id == "" {
-		value = books;
-	}else{
+	if id != "" {
 		i := find(id)
 		if i == -1 {
 			return
