@@ -4,6 +4,7 @@ import (
     "encoding/json"
     "net/http"
     "path"
+	"fmt"
 )
 
 func find(x string) int {
@@ -54,12 +55,12 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	decoder := json.NewDecoder(r.Body)
+	/*decoder := json.NewDecoder(r.Body)
 	var data Book
-	/*err = decoder.Decode(&data)
+	err = decoder.Decode(&data)
 	if err != nil {
 		return
-	}*/
+	}
 	id := path.Base(r.URL.Path)
 	i := find(id)
 	if i == -1 {
@@ -69,7 +70,12 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	dataJson,err := json.Marshal(books[i])
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)	
-    return
+    return*/
+	r.ParseForm()
+	for key,value := range r.Form{
+		fmt.PrintF("%s = %s\n",key,value)
+	}	
+	return
 }
 
 func handleDelete(w http.ResponseWriter, r *http.Request) (err error) {
