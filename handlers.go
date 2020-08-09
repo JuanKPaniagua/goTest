@@ -65,8 +65,8 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	if i == -1 {
 		return
 	}
-	books[i]=data
-	dataJson,err = json.Marshal(books[i])
+	//books[i]=data
+	dataJson,err := json.Marshal(books[i])
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)	
     return
