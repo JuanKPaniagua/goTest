@@ -56,11 +56,21 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
+	/*id := path.Base(r.URL.Path)
+	checkError("Parse error", err)
+	i := find(id)
+	dataJson,err := json.Marshal(books)
+	if i == -1 {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(dataJson)	
+		return
+	}
+	dataJson,err = json.Marshal(books[i])
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(dataJson)*/
     r.ParseForm()
-    // Log all data. Form is a map[]
     log.Println(r.Form)
-    // Print the data back. We can use Form.Get() or Form["name"][0]
-    fmt.Fprintf(w, "Hello "+r.Form.Get("pages"))
+    fmt.Fprintf(w, "Hello "+r.Form)
     return
 }
 
