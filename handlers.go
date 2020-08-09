@@ -20,16 +20,15 @@ func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
 	checkError("Parse error", err)
 	if id == "" {
 	}else{
-		i := find(id)
-		if i == -1 {
-			return
-		}
-		dataJson,erre := json.Marshal(books[i])
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(dataJson)
 		
 	}
-	
+	i := find(id)
+	if i == -1 {
+		return
+	}
+	dataJson,err := json.Marshal(books[i])
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(dataJson)	
     return
 }
 
