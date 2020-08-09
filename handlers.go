@@ -54,16 +54,14 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	decoder := json.NewDecoder(r.Body)
+	/*decoder := json.NewDecoder(r.Body)
 	var data Book
 	err = decoder.Decode(&data)
 	if err != nil {
 		return
-	}
+	}*/
 	id := path.Base(r.URL.Path)
-	checkError("Parse error", err)
 	i := find(id)
-	dataJson,err := json.Marshal(books)
 	if i == -1 {
 		return
 	}
