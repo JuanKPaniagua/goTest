@@ -19,7 +19,6 @@ func delete(x string) int {
     for i, book := range books {
         if x == book.Id {
 			copy(books[i:], books[i+1:]) // Shift a[i+1:] left one index.
-			books[len(books)-1] = ""     // Erase last element (write zero value).
 			books = books[:len(books)-1]     // Truncate slice.
             return i
         }
