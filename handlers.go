@@ -25,10 +25,11 @@ func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
 			return
 		}
 		dataJson,err = json.Marshal(books[i])
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(dataJson)
 		
 	}
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(dataJson1)
+	
     return
 }
 
