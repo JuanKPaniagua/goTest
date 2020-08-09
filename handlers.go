@@ -4,8 +4,6 @@ import (
     "encoding/json"
     "net/http"
     "path"
-	"fmt"
-    "log"
 )
 
 func find(x string) int {
