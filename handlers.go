@@ -54,6 +54,10 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
+    id := path.Base(r.URL.Path)
+	checkError("Parse error", err)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(id)
     w.WriteHeader(200)
     return
 }
