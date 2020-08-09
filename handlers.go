@@ -54,11 +54,11 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-    id := path.Base(r.URL.Path)
-	checkError("Parse error", err)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(id)
-    w.WriteHeader(200)
+    r.ParseForm()
+    // Log all data. Form is a map[]
+    log.Println(r.Form)
+    // Print the data back. We can use Form.Get() or Form["name"][0]
+    fmt.Fprintf(w, "Hello "+r.Form)
     return
 }
 
@@ -67,8 +67,6 @@ func handleDelete(w http.ResponseWriter, r *http.Request) (err error) {
 	checkError("Parse error", err)
 	i := delete(id)
 	if i == -1 {
-		//w.Header().Set("Content-Type", "application/json")
-		//w.Write("Id typed cannot be founded")	
 		return
 	}
 	dataJson,err := json.Marshal(books)
