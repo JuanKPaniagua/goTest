@@ -64,7 +64,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	for key,value := range r.ParseForm{
 		switch key {
 			case "title":
-				book.Title=value[0]
+				book.Title="TEST"
 		}
 	}
 	books[i] =book
