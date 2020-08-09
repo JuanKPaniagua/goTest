@@ -73,7 +73,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
     return*/
 	r.ParseForm()
 	for key,value := range r.Form{
-		fmt.PrintF("%s = %s\n",key,value)
+		fmt.Printf("%s = %s\n",key,value)
 	}	
 	return
 }
