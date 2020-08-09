@@ -61,7 +61,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 		panic(err)
 	}
 	w.Header().Set("Content-Type", "application/json")
-	w.Write(data)
+	w.Write(data.language)
     w.WriteHeader(200)
     return
 }
