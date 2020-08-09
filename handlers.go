@@ -70,7 +70,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	w.Write(dataJson)*/
     r.ParseForm()
     log.Println(r.Form)
-    fmt.Fprintf(w, "Hello "+r.Form)
+    fmt.Fprintf(w, "Hello "+r.Form["language"][0])
     return
 }
 
