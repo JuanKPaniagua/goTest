@@ -4,7 +4,6 @@ import (
     "encoding/json"
     "net/http"
     "path"
-	"log"
 )
 
 func find(x string) int {
@@ -70,11 +69,11 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	dataJson,err = json.Marshal(r.Form)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)*/
-	err = req.ParseForm()
+	err = r.ParseForm()
 	if err != nil {
 		panic(err)
 	}
-	v := req.Form
+	v := r.Form
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(v)
     w.WriteHeader(200)
