@@ -65,6 +65,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 		switch key {
 			case "title":
 				book.Title="TEST"
+				value=value
 		}
 	}
 	books[i] =book
