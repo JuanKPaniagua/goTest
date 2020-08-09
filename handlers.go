@@ -56,7 +56,7 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	/*id := path.Base(r.URL.Path)
+	id := path.Base(r.URL.Path)
 	checkError("Parse error", err)
 	i := find(id)
 	dataJson,err := json.Marshal(books)
@@ -65,11 +65,12 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 		w.Write(dataJson)	
 		return
 	}
-	dataJson,err = json.Marshal(books[i])
+	r.ParseForm()
+	
+	//dataJson,err = json.Marshal(books[i])
+	dataJson,err = json.Marshal(r.Form)
 	w.Header().Set("Content-Type", "application/json")
-	w.Write(dataJson)*/
-    r.ParseForm()
-    fmt.Fprintf(w, "Hello "+r.Form["language"])
+	w.Write(dataJson)
     return
 }
 
