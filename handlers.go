@@ -58,7 +58,6 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	var data Book
 	err = decoder.Decode(&data)
 	if err != nil {
-		panic(err)
 		return
 	}
 	id := path.Base(r.URL.Path)
@@ -66,7 +65,6 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	i := find(id)
 	dataJson,err := json.Marshal(books)
 	if i == -1 {
-		panic(err)
 		return
 	}
 	books[i]=data
