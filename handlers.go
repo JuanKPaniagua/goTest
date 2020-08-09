@@ -4,6 +4,8 @@ import (
     "encoding/json"
     "net/http"
     "path"
+	"fmt"
+    "log"
 )
 
 func find(x string) int {
@@ -58,7 +60,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
     // Log all data. Form is a map[]
     log.Println(r.Form)
     // Print the data back. We can use Form.Get() or Form["name"][0]
-    fmt.Fprintf(w, "Hello "+r.Form)
+    fmt.Fprintf(w, "Hello "+r.Form.Get("pages"))
     return
 }
 
