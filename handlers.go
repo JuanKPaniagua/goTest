@@ -54,12 +54,12 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	/*decoder := json.NewDecoder(r.Body)
+	decoder := json.NewDecoder(r.Body)
 	var data Book
 	err = decoder.Decode(&data)
 	if err != nil {
 		return
-	}*/
+	}
 	id := path.Base(r.URL.Path)
 	i := find(id)
 	if i == -1 {
