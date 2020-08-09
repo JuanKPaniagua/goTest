@@ -15,7 +15,7 @@ func find(x string) int {
     return -1
 }
 
-func handleGet(w http.ResponseWriter, r *http.Request) (err error, err2 error) {
+func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
     id := path.Base(r.URL.Path)
     checkError("Parse error", err)
 	if id == "" {
