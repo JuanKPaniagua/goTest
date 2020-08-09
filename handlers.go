@@ -70,7 +70,7 @@ func handleDelete(w http.ResponseWriter, r *http.Request) (err error) {
 	}
 	dataJson,err = json.Marshal(books)
 	w.Header().Set("Content-Type", "application/json")
-	w.Write("Value deleted)
+	w.Write("Value deleted")
 	w.Write(dataJson)
     w.WriteHeader(200)
     return
