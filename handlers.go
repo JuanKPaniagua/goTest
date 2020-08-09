@@ -59,10 +59,20 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	err = decoder.Decode(&data)
 	if err != nil {
 		panic(err)
+		return
 	}
+	id := path.Base(r.URL.Path)
+	checkError("Parse error", err)
+	i := find(id)
+	dataJson,err := json.Marshal(books)
+	if i == -1 {
+		panic(err)
+		return
+	}
+	books[i]=data
+	dataJson,err = json.Marshal(books[i])
 	w.Header().Set("Content-Type", "application/json")
-	w.Write(data.language)
-    w.WriteHeader(200)
+	w.Write(dataJson)	
     return
 }
 
