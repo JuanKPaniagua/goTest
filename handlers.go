@@ -69,8 +69,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)*/
     r.ParseForm()
-    log.Println(r.Form)
-    fmt.Fprintf(w, "Hello "+r.Form["language"][0])
+    fmt.Fprintf(w, "Hello "+r.Form["language"])
     return
 }
 
