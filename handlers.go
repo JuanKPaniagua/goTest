@@ -4,6 +4,7 @@ import (
     "encoding/json"
     "net/http"
     "path"
+	"log"
 )
 
 func find(x string) int {
@@ -54,7 +55,7 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	id := path.Base(r.URL.Path)
+	/*id := path.Base(r.URL.Path)
 	checkError("Parse error", err)
 	i := find(id)
 	dataJson,err := json.Marshal(books)
@@ -65,10 +66,17 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	}
 	r.ParseForm()
 	
-	//dataJson,err = json.Marshal(books[i])
+	dataJson,err = json.Marshal(books[i])
 	dataJson,err = json.Marshal(r.Form)
 	w.Header().Set("Content-Type", "application/json")
-	w.Write(dataJson)
+	w.Write(dataJson)*/
+	decoder := json.NewDecoder(req.Body)
+    var t test_struct
+    err := decoder.Decode(&t)
+    if err != nil {
+        panic(err)
+    }
+    log.Println(t.Test)
     return
 }
 
