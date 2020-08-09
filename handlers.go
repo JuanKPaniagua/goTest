@@ -70,13 +70,17 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	dataJson,err = json.Marshal(r.Form)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)*/
-	decoder := json.NewDecoder(req.Body)
-    var t test_struct
-    err := decoder.Decode(&t)
-    if err != nil {
-        panic(err)
-    }
-    log.Println(t.Test)
+	var u User
+        if r.Body == nil {
+            http.Error(w, "Please send a request body", 400)
+            return
+        }
+        err := json.NewDecoder(r.Body).Decode(&u)
+        if err != nil {
+            http.Error(w, err.Error(), 400)
+            return
+        }
+        fmt.Println(u)
     return
 }
 
