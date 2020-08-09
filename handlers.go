@@ -64,13 +64,12 @@ func handleDelete(w http.ResponseWriter, r *http.Request) (err error) {
 	checkError("Parse error", err)
 	i := dlete(id)
 	if i == -1 {
-		w.Header().Set("Content-Type", "application/json")
-		w.Write("Id typed cannot be founded")	
+		//w.Header().Set("Content-Type", "application/json")
+		//w.Write("Id typed cannot be founded")	
 		return
 	}
 	dataJson,err = json.Marshal(books)
 	w.Header().Set("Content-Type", "application/json")
-	w.Write("Value deleted")
 	w.Write(dataJson)
     w.WriteHeader(200)
     return
