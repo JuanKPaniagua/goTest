@@ -60,7 +60,24 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 		return
 	}	
 	r.ParseForm()
-	books[i].Title=r.FormValue("title")
+	if r.FormValue("title") != ""{
+		books[i].Title=r.FormValue("title")
+	}
+	if r.FormValue("edition") != ""{
+		books[i].Edition=r.FormValue("edition")
+	}
+	if r.FormValue("copyright") != ""{
+		books[i].Copyright=r.FormValue("copyright")
+	}
+	if r.FormValue("pages") != ""{
+		books[i].Pages=r.FormValue("pages")
+	}
+	if r.FormValue("author") != ""{
+		books[i].Author=r.FormValue("author")
+	}
+	if r.FormValue("publisher") != ""{
+		books[i].Publisher=r.FormValue("publisher")
+	}
 	dataJson,err := json.Marshal(books)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)
