@@ -4,7 +4,6 @@ import (
     "encoding/json"
     "net/http"
     "path"
-	"io/ioutil"
 )
 
 func find(x string) int {
@@ -55,21 +54,14 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-    var book Book
-	body, err := ioutil.ReadAll(r.Body)
-    err = json.Unmarshal(body,&book)
-    if err != nil {
-        panic(err)
-    }
-	/*id := path.Base(r.URL.Path)
+	id := path.Base(r.URL.Path)
 	i := find(id)
 	if i == -1 {
 		return
 	}	
 	r.ParseForm()
 	books[i].Title=r.FormValue("title")
-	//books[i].Title="EL problema es el R"*/
-	dataJson,err := json.Marshal(book)
+	dataJson,err := json.Marshal(books)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)
 	return
