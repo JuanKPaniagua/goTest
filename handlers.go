@@ -15,30 +15,16 @@ func find(x string) int {
     return -1
 }
 
-func delete(x string) int {
-    for i, book := range books {
-        if x == book.Id {
-			copy(books[i:], books[i+1:]) // Shift a[i+1:] left one index.
-			books = books[:len(books)-1]     // Truncate slice.
-            return i
-        }
-    }
-    return -1
-}
-
 func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
     id := path.Base(r.URL.Path)
-	checkError("Parse error", err)
-	i := find(id)
-	dataJson,err := json.Marshal(books)
-	if i == -1 {
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(dataJson)	
-		return
-	}
-	dataJson,err = json.Marshal(books[i])
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(dataJson)	
+    checkError("Parse error", err)
+    i := find(id)
+    if i == -1 {
+        return
+    }
+    dataJson, err := json.Marshal(books[i])
+    w.Header().Set("Content-Type", "application/json")
+    w.Write(dataJson)
     return
 }
 
@@ -54,47 +40,11 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	r.Header.Set("Content-Type", "application/x-www-form-urlencoded; param=value")
-	id := path.Base(r.URL.Path)
-	i := find(id)
-	if i == -1 {
-		return
-	}	
-	r.ParseForm()
-	if r.FormValue("title") != ""{
-		books[i].Title=r.FormValue("title")
-	}
-	if r.FormValue("edition") != ""{
-		books[i].Edition=r.FormValue("edition")
-	}
-	if r.FormValue("copyright") != ""{
-		books[i].Copyright=r.FormValue("copyright")
-	}
-	if r.FormValue("pages") != ""{
-		books[i].Pages=r.FormValue("pages")
-	}
-	if r.FormValue("author") != ""{
-		books[i].Author=r.FormValue("author")
-	}
-	if r.FormValue("publisher") != ""{
-		books[i].Publisher=r.FormValue("publisher")
-	}
-	dataJson,err := json.Marshal(books)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(dataJson)
-	return
+    w.WriteHeader(200)
+    return
 }
 
 func handleDelete(w http.ResponseWriter, r *http.Request) (err error) {
-	id := path.Base(r.URL.Path)
-	checkError("Parse error", err)
-	i := delete(id)
-	if i == -1 {
-		return
-	}
-	dataJson,err := json.Marshal(books)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(dataJson)
     w.WriteHeader(200)
     return
 }
