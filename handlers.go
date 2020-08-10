@@ -56,7 +56,7 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	decoder := json.NewDecoder(r.Body)
     var book Book
-    err := decoder.Decode(&book)
+    err = decoder.Decode(&book)
     if err != nil {
         panic(err)
     }
@@ -70,7 +70,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	//books[i].Title="EL problema es el R"*/
 	dataJson,err := json.Marshal(book)
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteString(dataJson)
+	w.Write(dataJson)
 	return
 }
 
