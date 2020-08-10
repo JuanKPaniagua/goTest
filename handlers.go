@@ -54,6 +54,7 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
+	r.Header.Set("Content-Type", "x-www-form-urlencoded")
 	id := path.Base(r.URL.Path)
 	i := find(id)
 	if i == -1 {
