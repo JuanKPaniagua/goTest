@@ -60,15 +60,12 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 		return
 	}	
 	r.ParseForm()
-	book :=books[i]
 	for key,value := range r.Form{
 		switch key {
 			case "title":
-				book.Title=value[0]
+				books[i].Title=value[0]
 		}
 	}
-	books[i] =book
-	books = append(books, book)
 	dataJson,err := json.Marshal(books)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)
