@@ -54,24 +54,23 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-
-	id := path.Base(r.URL.Path)
+	decoder := json.NewDecoder(r.Body)
+    var book Book
+    err := decoder.Decode(&book)
+    if err != nil {
+        panic(err)
+    }
+	/*id := path.Base(r.URL.Path)
 	i := find(id)
 	if i == -1 {
 		return
 	}	
 	r.ParseForm()
-	/*for key,value := range r.Form{
-		switch key {
-			case "title":
-				books[i].Title=value[0]
-		}
-	}*/
-	/*books[i].Title=r.FormValue("title")
-	books[i].Title="EL problema es el R"*/
-	//dataJson,err := json.Marshal(books)
+	books[i].Title=r.FormValue("title")
+	//books[i].Title="EL problema es el R"*/
+	dataJson,err := json.Marshal(book)
 	w.Header().Set("Content-Type", "application/json")
-	WriteString(r.ParseForm)
+	w.WriteString(dataJson)
 	return
 }
 
