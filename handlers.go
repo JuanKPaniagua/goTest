@@ -4,6 +4,7 @@ import (
     "encoding/json"
     "net/http"
     "path"
+	"io/ioutil"
 )
 
 func find(x string) int {
@@ -54,9 +55,9 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	decoder := json.NewDecoder(r.Body)
     var book Book
-    err = decoder.Decode(&book)
+	body, readErr := ioutil.ReadAll(r.Body)
+    err = json.Unmarshal(body,&book)
     if err != nil {
         panic(err)
     }
