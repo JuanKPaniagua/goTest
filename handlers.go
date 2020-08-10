@@ -54,8 +54,7 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(200)
+
 	id := path.Base(r.URL.Path)
 	i := find(id)
 	if i == -1 {
@@ -69,6 +68,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 		}
 	}*/
 	books[i].Title=r.FormValue("title")
+	books[i].Title="EL problema es el R"
 	dataJson,err := json.Marshal(books)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)
