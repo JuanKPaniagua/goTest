@@ -56,7 +56,7 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
     var book Book
-	body, readErr := ioutil.ReadAll(r.Body)
+	body, err := ioutil.ReadAll(r.Body)
     err = json.Unmarshal(body,&book)
     if err != nil {
         panic(err)
