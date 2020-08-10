@@ -71,7 +71,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	books[i].Title="EL problema es el R"*/
 	//dataJson,err := json.Marshal(books)
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteString(r.ParseForm)
+	WriteString(r.ParseForm)
 	return
 }
 
