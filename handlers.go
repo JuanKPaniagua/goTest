@@ -59,6 +59,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 	if i == -1 {
 		return
 	}	
+	r.ParseForm()
 	/*for key,value := range r.Form{
 		switch key {
 			case "title":
