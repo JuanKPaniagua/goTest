@@ -65,7 +65,7 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 				books[i].Title=value[0]
 		}
 	}*/
-	books[i].Title=r.FormValue("title")
+	books[i].Title=r.PostForm.Get("title")
 	dataJson,err := json.Marshal(books)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(dataJson)
