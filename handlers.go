@@ -54,40 +54,10 @@ func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
-	id := path.Base(r.URL.Path)
-	i := find(id)
-	if i == -1 {
-		return
-	}	
-	//r.ParseForm()
-	len := r.ContentLength
-    body := make([]byte, len)
-    r.Body.Read(body)
-    book := Book{}
-    json.Unmarshal(body, &book)
-	if book.Title != ""{
-		books[i].Title=book.Title
-	}
-	if book.Edition != ""{
-		books[i].Edition=book.Edition
-	}
-	if book.Copyright != ""{
-		books[i].Copyright=book.Copyright
-	}
-	if book.Pages != ""{
-		books[i].Pages=book.Pages
-	}
-	if book.Author != ""{
-		books[i].Author=book.Author
-	}
-	if book.Publisher != ""{
-		books[i].Publisher=book.Publisher
-	}
-	dataJson,err := json.Marshal(books)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(dataJson)
-	return
+    w.WriteHeader(200)
+    return
 }
+
 func handleDelete(w http.ResponseWriter, r *http.Request) (err error) {
 	id := path.Base(r.URL.Path)
 	checkError("Parse error", err)
