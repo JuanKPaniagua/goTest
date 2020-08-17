@@ -24,8 +24,7 @@ message BookID {
 }
 
 message DBook {
-  string Status = 1;
-  string Msj = 2;
+  string Msj = 1;
 }
 
 message UBook {
