@@ -5,7 +5,6 @@ service BookInfo {
   rpc addBook(Book) returns (BookID);
   rpc getBook(BookID) returns (Book);
   rpc deleteBook(BookID) returns (DBook);
-  rpc updateBook(UBook) returns (Book);
 }
 
 message Book {
@@ -25,9 +24,4 @@ message BookID {
 
 message DBook {
   string Msj = 1;
-}
-
-message UBook {
-  Book newValues = 1;
-  BookID Id = 2;
 }
