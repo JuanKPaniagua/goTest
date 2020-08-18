@@ -5,7 +5,6 @@ import (
     "google.golang.org/grpc"
     "log"
     "net"
-    "os"
 )
 
 func main() {
