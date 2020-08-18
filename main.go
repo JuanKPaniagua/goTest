@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-    port := os.Getenv("PORT")
+    port := "8080"
     lis, err := net.Listen("tcp", ":"+port)
     if err != nil {
         log.Fatalf("failed to listen: %v", err)
