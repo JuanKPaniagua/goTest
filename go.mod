@@ -1,10 +1,5 @@
-module github.com/JuanKPaniagua/goTest
-
-require (
-	github.com/gofrs/uuid v3.3.0+incompatible
-	github.com/golang/protobuf v1.4.1
-	google.golang.org/grpc v1.27.0
-	google.golang.org/protobuf v1.25.0
-)
+module github.com/arce/gowebservices
 
 go 1.12
+
+require github.com/gorilla/mux v1.7.4
