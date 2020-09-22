@@ -179,7 +179,7 @@ func (s publisherservice) CreatePublisher(ctx context.Context, publisher Publish
     return msg, nil
 }
 
-func (s publisherservice) GetPublisheById(ctx context.Context, id string) (interface{}, error) {
+func (s publisherservice) GetPublisherById(ctx context.Context, id string) (interface{}, error) {
     var err error
     var publisher interface{}
     var empty interface{}
@@ -191,7 +191,7 @@ func (s publisherservice) GetPublisheById(ctx context.Context, id string) (inter
     return publisher, nil
 }
 
-func (s publisherservice) DeletePublishe(ctx context.Context, id string) (string, error) {
+func (s publisherservice) DeletePublisher(ctx context.Context, id string) (string, error) {
     var err error
     msg := ""
     i := findPublishers(id)
@@ -204,7 +204,7 @@ func (s publisherservice) DeletePublishe(ctx context.Context, id string) (string
     return msg, nil
 }
 
-func (s publisherservice) UpdatePublishe(ctx context.Context, publisher Publisher) (string, error) {
+func (s publisherservice) UpdatePublisher(ctx context.Context, publisher Publisher) (string, error) {
     var empty = ""
     var err error
     var msg = "success"
