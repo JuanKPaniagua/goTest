@@ -13,33 +13,33 @@ func main() {
 
     r := mux.NewRouter()
 
-    var svc BookService
-    svc = NewServiceB(logger)
+    var svcB BookService
+    svcB = NewServiceB(logger)
 	
-	var svc PublisherService
-    svc = NewServiceP(logger)
+	var svcP PublisherService
+    svcP = NewServiceP(logger)
 
     // svc = loggingMiddleware{logger, svc}
     // svc = instrumentingMiddleware{requestCount, requestLatency, countResult, svc}
 
 	//BOOKS
     CreateBookHandler := httptransport.NewServer(
-        makeCreateBookEndpoint(svc),
+        makeCreateBookEndpoint(svcB),
         decodeCreateBookRequest,
         encodeResponse,
     )
     GetByBookIdHandler := httptransport.NewServer(
-        makeGetBookByIdEndpoint(svc),
+        makeGetBookByIdEndpoint(svcB),
         decodeGetBookByIdRequest,
         encodeResponse,
     )
     DeleteBookHandler := httptransport.NewServer(
-        makeDeleteBookEndpoint(svc),
+        makeDeleteBookEndpoint(svcB),
         decodeDeleteBookRequest,
         encodeResponse,
     )
     UpdateBookHandler := httptransport.NewServer(
-        makeUpdateBookendpoint(svc),
+        makeUpdateBookendpoint(svcB),
         decodeUpdateBookRequest,
         encodeResponse,
     )
@@ -51,22 +51,22 @@ func main() {
 
 	//PUBLISHER
     CreatePublisherHandler := httptransport.NewServer(
-        makeCreatePublisherEndpoint(svc),
+        makeCreatePublisherEndpoint(svcP),
         decodeCreatePublisherRequest,
         encodeResponse,
     )
     GetByPublisherIdHandler := httptransport.NewServer(
-        makeGetPublisherByIdEndpoint(svc),
+        makeGetPublisherByIdEndpoint(svcP),
         decodeGetPublisherByIdRequest,
         encodeResponse,
     )
     DeletePublisherHandler := httptransport.NewServer(
-        makeDeletePublisherEndpoint(svc),
+        makeDeletePublisherEndpoint(svcP),
         decodeDeletePublisherRequest,
         encodeResponse,
     )
     UpdatePublisherHandler := httptransport.NewServer(
-        makeUpdatePublisherendpoint(svc),
+        makeUpdatePublisherendpoint(svcP),
         decodeUpdatePublisherRequest,
         encodeResponse,
     )
