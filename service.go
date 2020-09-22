@@ -38,23 +38,23 @@ type bookservice struct {
 }
 
 // Services
-type BookService interfaceB {
+type BookService interface {
     CreateBook(ctx context.Context, book Book) (string, error)
-    GetBookById(ctx context.Context, id string) (interfaceB{}, error)
+    GetBookById(ctx context.Context, id string) (interface{}, error)
     UpdateBook(ctx context.Context, book Book) (string, error)
     DeleteBook(ctx context.Context, id string) (string, error)
 }
 
-type PublisherService interfaceP {
+type PublisherService interface {
     CreatePublisher(ctx context.Context, publisher Publisher) (string, error)
-    GetPublisherById(ctx context.Context, id string) (interfaceP{}, error)
+    GetPublisherById(ctx context.Context, id string) (interface{}, error)
     UpdatePublisher(ctx context.Context, publisher Publisher) (string, error)
     DeletePublisher(ctx context.Context, id string) (string, error)
 }
 
-type BookService interfaceA {
+type AuthorService interface {
     CreateAuthor(ctx context.Context, author Author) (string, error)
-    GetAuthorById(ctx context.Context, id string) (interfaceA{}, error)
+    GetAuthorById(ctx context.Context, id string) (interface{}, error)
     UpdateAuthor(ctx context.Context, author Author) (string, error)
     DeleteAuthor(ctx context.Context, id string) (string, error)
 }
@@ -125,10 +125,10 @@ func (s bookservice) CreateBook(ctx context.Context, book Book) (string, error) 
     return msg, nil
 }
 
-func (s bookservice) GetBookById(ctx context.Context, id string) (interfaceB{}, error) {
+func (s bookservice) GetBookById(ctx context.Context, id string) (interface{}, error) {
     var err error
-    var book interfaceB{}
-    var empty interfaceB{}
+    var book interface{}
+    var empty interface{}
     i := findBooks(id)
     if i == -1 {
         return empty, err
