@@ -96,28 +96,6 @@ func findAuthors(x string) int {
     return -1
 }
 
-func findBooksbyAuthors(x string) []int {
-	y:=[]int{}
-    for i, _ := range books {
-		for _,z := range books[i].Author{
-			if z == x {
-				y = append(y, i)
-			}
-		} 
-    }
-    return y
-}
-
-func findBooksbyPublishers (x string) []int {
-	y:=[]int{}
-    for i, book := range books {
-		if x == book.Publisher {
-			y = append(y, i)
-		}
-    }
-    return y
-}
-
 
 func NewService(logger log.Logger) BookService {
     return &bookservice{
