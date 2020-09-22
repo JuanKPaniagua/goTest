@@ -5,6 +5,7 @@ import (
     "github.com/go-kit/kit/log"
 )
 
+//structs
 type Book struct {
     BookId    string `json:"bookId,omitempty"`
     Title     string `json:"title,omitempty"`
@@ -36,14 +37,29 @@ type bookservice struct {
     logger log.Logger
 }
 
-// Service describes the Book service.
-type BookService interface {
+// Services
+type BookService interfaceB {
     CreateBook(ctx context.Context, book Book) (string, error)
-    GetBookById(ctx context.Context, id string) (interface{}, error)
+    GetBookById(ctx context.Context, id string) (interfaceB{}, error)
     UpdateBook(ctx context.Context, book Book) (string, error)
     DeleteBook(ctx context.Context, id string) (string, error)
 }
 
+type PublisherService interfaceP {
+    CreatePublisher(ctx context.Context, publisher Publisher) (string, error)
+    GetPublisherById(ctx context.Context, id string) (interfaceP{}, error)
+    UpdatePublisher(ctx context.Context, publisher Publisher) (string, error)
+    DeletePublisher(ctx context.Context, id string) (string, error)
+}
+
+type BookService interfaceA {
+    CreateAuthor(ctx context.Context, author Author) (string, error)
+    GetAuthorById(ctx context.Context, id string) (interfaceA{}, error)
+    UpdateAuthor(ctx context.Context, author Author) (string, error)
+    DeleteAuthor(ctx context.Context, id string) (string, error)
+}
+
+//Data
 var books = []Book{
     Book{BookId: "Book1", Title: "Operating System Concepts", Edition: "9th",
         Copyright: "2012", Language: "ENGLISH", Pages: "976",
@@ -109,10 +125,10 @@ func (s bookservice) CreateBook(ctx context.Context, book Book) (string, error) 
     return msg, nil
 }
 
-func (s bookservice) GetBookById(ctx context.Context, id string) (interface{}, error) {
+func (s bookservice) GetBookById(ctx context.Context, id string) (interfaceB{}, error) {
     var err error
-    var book interface{}
-    var empty interface{}
+    var book interfaceB{}
+    var empty interfaceB{}
     i := findBooks(id)
     if i == -1 {
         return empty, err
