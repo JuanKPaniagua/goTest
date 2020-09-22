@@ -37,6 +37,10 @@ type bookservice struct {
     logger log.Logger
 }
 
+type publisherservice struct {
+    logger log.Logger
+}
+
 // Services
 type BookService interface {
     CreateBook(ctx context.Context, book Book) (string, error)
