@@ -14,7 +14,10 @@ func main() {
     r := mux.NewRouter()
 
     var svc BookService
-    svc = NewService(logger)
+    svc = NewServiceB(logger)
+	
+	var svc PublisherService
+    svc = NewServiceP(logger)
 
     // svc = loggingMiddleware{logger, svc}
     // svc = instrumentingMiddleware{requestCount, requestLatency, countResult, svc}

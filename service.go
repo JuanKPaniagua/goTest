@@ -114,7 +114,7 @@ func findAuthors(x string) int {
 
 //Books
 
-func NewService(logger log.Logger) BookService {
+func NewServiceB(logger log.Logger) BookService {
     return &bookservice{
         logger: logger,
     }
@@ -163,7 +163,7 @@ func (s bookservice) UpdateBook(ctx context.Context, book Book) (string, error) 
 
 //PublisherService
 
-func NewService(logger log.Logger) PublisherService {
+func NewServiceP(logger log.Logger) PublisherService {
     return &publisherservice{
         logger: logger,
     }
