@@ -19,6 +19,7 @@ func main() {
     // svc = loggingMiddleware{logger, svc}
     // svc = instrumentingMiddleware{requestCount, requestLatency, countResult, svc}
 
+	//BOOKS
     CreateBookHandler := httptransport.NewServer(
         makeCreateBookEndpoint(svc),
         decodeCreateBookRequest,
@@ -45,6 +46,33 @@ func main() {
     r.Handle("/book/{bookid}", GetByBookIdHandler).Methods("GET")
     r.Handle("/book/{bookid}", DeleteBookHandler).Methods("DELETE")
 
+	//PUBLISHER
+    CreatePublisherHandler := httptransport.NewServer(
+        makeCreatePublisherEndpoint(svc),
+        decodeCreatePublisherRequest,
+        encodeResponse,
+    )
+    GetByPublisherIdHandler := httptransport.NewServer(
+        makeGetPublisherByIdEndpoint(svc),
+        decodeGetPublisherByIdRequest,
+        encodeResponse,
+    )
+    DeletePublisherHandler := httptransport.NewServer(
+        makeDeletePublisherEndpoint(svc),
+        decodeDeletePublisherRequest,
+        encodeResponse,
+    )
+    UpdatePublisherHandler := httptransport.NewServer(
+        makeUpdatePublisherendpoint(svc),
+        decodeUpdatePublisherRequest,
+        encodeResponse,
+    )
+    http.Handle("/", r)
+    http.Handle("/publisher", CreatePublisherHandler)
+    http.Handle("/publisher/update", UpdatePublisherHandler)
+    r.Handle("/publisher/{publisherid}", GetByPublisherIdHandler).Methods("GET")
+    r.Handle("/publisher/{publisherid}", DeletePublisherHandler).Methods("DELETE")
+	
     // http.Handle("/metrics", promhttp.Handler())
     logger.Log("msg", "HTTP", "addr", ":"+os.Getenv("PORT"))
     logger.Log("err", http.ListenAndServe(":"+os.Getenv("PORT"), nil))

@@ -112,6 +112,7 @@ func findAuthors(x string) int {
     return -1
 }
 
+//Books
 
 func NewService(logger log.Logger) BookService {
     return &bookservice{
@@ -157,5 +158,56 @@ func (s bookservice) UpdateBook(ctx context.Context, book Book) (string, error) 
         return empty, err
     }
     books[i] = book
+    return msg, nil
+}
+
+//PublisherService
+
+func NewService(logger log.Logger) PublisherService {
+    return &publisherservice{
+        logger: logger,
+    }
+}
+
+func (s publisherservice) CreatePublisher(ctx context.Context, publisher Publisher) (string, error) {
+    var msg = "success"
+    publishers = append(publishers, publisher)
+    return msg, nil
+}
+
+func (s publisherservice) GetBookById(ctx context.Context, id string) (interface{}, error) {
+    var err error
+    var publisher interface{}
+    var empty interface{}
+    i := findPublishers(id)
+    if i == -1 {
+        return empty, err
+    }
+    publisher = publishers[i]
+    return publisher, nil
+}
+
+func (s publisherservice) DeleteBook(ctx context.Context, id string) (string, error) {
+    var err error
+    msg := ""
+    i := findPublishers(id)
+    if i == -1 {
+        return "", err
+    }
+    copy(publishers[i:], publishers[i+1:])
+    publishers[len(publishers)-1] = Publisher{}
+    publishers = publishers[:len(publishers)-1]
+    return msg, nil
+}
+
+func (s publisherservice) UpdateBook(ctx context.Context, publisher Publisher) (string, error) {
+    var empty = ""
+    var err error
+    var msg = "success"
+    i := findPublishers(publisher.PublisherId)
+    if i == -1 {
+        return empty, err
+    }
+    publishers[i] = publisher
     return msg, nil
 }
