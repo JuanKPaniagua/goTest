@@ -301,4 +301,37 @@ type (
         Msg string `json:"status,omitempty"`
         Err error  `json:"error,omitempty"`
     }
+	
+	//Authors
+
+	CreateAuthorRequest struct {
+        author Author
+    }
+    CreateAuthorResponse struct {
+        Msg string `json:"msg"`
+        Err error  `json:"error,omitempty"`
+    }
+    GetAuthorByIdRequest struct {
+        Id string `json:"authorid"`
+    }
+    GetAuthorByIdResponse struct {
+        Author interface{} `json:"author,omitempty"`
+        Err  string      `json:"error,omitempty"`
+    }
+
+    DeleteAuthorRequest struct {
+        Authorid string `json:"authorid"`
+    }
+
+    DeleteAuthorResponse struct {
+        Msg string `json:"response"`
+        Err error  `json:"error,omitempty"`
+    }
+    UpdateAuthorRequest struct {
+        author Author
+    }
+    UpdateAuthorResponse struct {
+        Msg string `json:"status,omitempty"`
+        Err error  `json:"error,omitempty"`
+    }
 )
