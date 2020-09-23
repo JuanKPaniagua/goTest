@@ -80,22 +80,22 @@ func main() {
 	
 	//AUTHOR
     CreateAuthorHandler := httptransport.NewServer(
-        makeCreateAuthorEndpoint(svcP),
+        makeCreateAuthorEndpoint(svcA),
         decodeCreateAuthorRequest,
         encodeResponse,
     )
     GetByAuthorIdHandler := httptransport.NewServer(
-        makeGetAuthorByIdEndpoint(svcP),
+        makeGetAuthorByIdEndpoint(svcA),
         decodeGetAuthorByIdRequest,
         encodeResponse,
     )
     DeleteAuthorHandler := httptransport.NewServer(
-        makeDeleteAuthorEndpoint(svcP),
+        makeDeleteAuthorEndpoint(svcA),
         decodeDeleteAuthorRequest,
         encodeResponse,
     )
     UpdateAuthorHandler := httptransport.NewServer(
-        makeUpdateAuthorendpoint(svcP),
+        makeUpdateAuthorendpoint(svcA),
         decodeUpdateAuthorRequest,
         encodeResponse,
     )
