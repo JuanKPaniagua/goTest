@@ -13,7 +13,7 @@ type Book struct {
     Copyright string `json:"copyright,omitempty"`
     Language  string `json:"language,omitempty"`
     Pages     string `json:"pages,omitempty"`
-    Author    string[] `json:"author,omitempty"`
+    Author    []string `json:"author,omitempty"`
     Publisher string `json:"publisher,omitempty"`
 }
 
@@ -180,9 +180,9 @@ func (s bookservice) UpdateBook(ctx context.Context, book Book) (string, error) 
 	if book.Pages != ""{
 		books[i].Pages=book.Pages
 	}
-	if book.Author != ""{
+	/*if book.Author != ""{
 		books[i].Author=book.Author
-	}
+	}*/
 	if book.Publisher != ""{
 		books[i].Publisher=book.Publisher
 	}
