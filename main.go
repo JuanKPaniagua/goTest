@@ -19,6 +19,8 @@ func main() {
 	var svcP PublisherService
     svcP = NewServiceP(logger)
 	
+	var svcA AuthorService
+    svcA = NewServiceA(logger)
 	
 
 	//BOOKS
