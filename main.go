@@ -16,8 +16,8 @@ func main() {
     var svcB BookService
     svcB = NewServiceB(logger)
 	
-	/*var svcP PublisherService
-    svcP = NewServiceP(logger)*/
+	var svcP PublisherService
+    svcP = NewServiceP(logger)
 
     // svc = loggingMiddleware{logger, svc}
     // svc = instrumentingMiddleware{requestCount, requestLatency, countResult, svc}
