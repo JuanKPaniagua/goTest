@@ -19,8 +19,6 @@ func main() {
 	var svcP PublisherService
     svcP = NewServiceP(logger)
 	
-	var svcA AuthorService
-    svcA = NewServiceA(logger)
 	
 
 	//BOOKS
@@ -77,28 +75,5 @@ func main() {
     r.Handle("/publisher/{publisherid}", DeletePublisherHandler).Methods("DELETE")
 	
 	//AUTHOR
-    CreateAuthorHandler := httptransport.NewServer(
-        makeCreateAuthorEndpoint(svcA),
-        decodeCreateAuthorRequest,
-        encodeResponse,
-    )
-    GetByAuthorIdHandler := httptransport.NewServer(
-        makeGetAuthorByIdEndpoint(svcA),
-        decodeGetAuthorByIdRequest,
-        encodeResponse,
-    )
-    DeleteAuthorHandler := httptransport.NewServer(
-        makeDeleteAuthorEndpoint(svcA),
-        decodeDeleteAuthorRequest,
-        encodeResponse,
-    )
-    UpdateAuthorHandler := httptransport.NewServer(
-        makeUpdateAuthorendpoint(svcA),
-        decodeUpdateAuthorRequest,
-        encodeResponse,
-    )
-    http.Handle("/author", CreateAuthorHandler)
-    http.Handle("/author/update", UpdateAuthorHandler)
-    r.Handle("/author/{authorid}", GetByAuthorIdHandler).Methods("GET")
-    r.Handle("/author/{authorid}", DeleteAuthorHandler).Methods("DELETE")
+
 }
