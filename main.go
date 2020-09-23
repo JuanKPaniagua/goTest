@@ -18,6 +18,9 @@ func main() {
 	
 	var svcP PublisherService
     svcP = NewServiceP(logger)
+	
+	var svcA AuthorService
+    svcA = NewServiceA(logger)
 
     // svc = loggingMiddleware{logger, svc}
     // svc = instrumentingMiddleware{requestCount, requestLatency, countResult, svc}
@@ -70,11 +73,36 @@ func main() {
         decodeUpdatePublisherRequest,
         encodeResponse,
     )
-    //http.Handle("/", r)
     http.Handle("/publisher", CreatePublisherHandler)
     http.Handle("/publisher/update", UpdatePublisherHandler)
     r.Handle("/publisher/{publisherid}", GetByPublisherIdHandler).Methods("GET")
     r.Handle("/publisher/{publisherid}", DeletePublisherHandler).Methods("DELETE")
+	
+	//AUTHOR
+    CreateAuthorHandler := httptransport.NewServer(
+        makeCreateAuthorEndpoint(svcP),
+        decodeCreateAuthorRequest,
+        encodeResponse,
+    )
+    GetByAuthorIdHandler := httptransport.NewServer(
+        makeGetAuthorByIdEndpoint(svcP),
+        decodeGetAuthorByIdRequest,
+        encodeResponse,
+    )
+    DeleteAuthorHandler := httptransport.NewServer(
+        makeDeleteAuthorEndpoint(svcP),
+        decodeDeleteAuthorRequest,
+        encodeResponse,
+    )
+    UpdateAuthorHandler := httptransport.NewServer(
+        makeUpdateAuthorendpoint(svcP),
+        decodeUpdateAuthorRequest,
+        encodeResponse,
+    )
+    http.Handle("/author", CreateAuthorHandler)
+    http.Handle("/author/update", UpdateAuthorHandler)
+    r.Handle("/author/{authorid}", GetByAuthorIdHandler).Methods("GET")
+    r.Handle("/author/{authorid}", DeleteAuthorHandler).Methods("DELETE")
 	
     // http.Handle("/metrics", promhttp.Handler())
     logger.Log("msg", "HTTP", "addr", ":"+os.Getenv("PORT"))
