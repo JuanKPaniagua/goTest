@@ -13,7 +13,7 @@ type Book struct {
     Copyright string `json:"copyright,omitempty"`
     Language  string `json:"language,omitempty"`
     Pages     string `json:"pages,omitempty"`
-    Author    string `json:"author,omitempty"`
+    Author    string[] `json:"author,omitempty"`
     Publisher string `json:"publisher,omitempty"`
 }
 
@@ -71,10 +71,10 @@ type AuthorService interface {
 var books = []Book{
     Book{BookId: "Book1", Title: "Operating System Concepts", Edition: "9th",
         Copyright: "2012", Language: "ENGLISH", Pages: "976",
-        Author: "Author2", Publisher: "Publisher2"},
+        Author: []string{"Author2"}, Publisher: "Publisher2"},
     Book{BookId: "Book2", Title: "Computer Networks", Edition: "5th",
         Copyright: "2010", Language: "ENGLISH", Pages: "960",
-        Author: "Author1", Publisher: "Publisher1"},
+        Author: []string{"Author1"}, Publisher: "Publisher1"},
 }
 
 var authors = []Author{
