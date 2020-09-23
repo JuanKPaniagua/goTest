@@ -242,7 +242,7 @@ func (s authorservice) GetAuthorById(ctx context.Context, id string) (interface{
     if i == -1 {
         return empty, err
     }
-    author = authors[i]
+    author = authors[0]
     return author, nil
 }
 
