@@ -21,9 +21,7 @@ func main() {
 	
 	var svcA AuthorService
     svcA = NewServiceA(logger)
-
-    // svc = loggingMiddleware{logger, svc}
-    // svc = instrumentingMiddleware{requestCount, requestLatency, countResult, svc}
+	
 
 	//BOOKS
     CreateBookHandler := httptransport.NewServer(
@@ -103,8 +101,4 @@ func main() {
     http.Handle("/author/update", UpdateAuthorHandler)
     r.Handle("/author/{authorid}", GetByAuthorIdHandler).Methods("GET")
     r.Handle("/author/{authorid}", DeleteAuthorHandler).Methods("DELETE")
-	
-    // http.Handle("/metrics", promhttp.Handler())
-    logger.Log("msg", "HTTP", "addr", ":"+os.Getenv("PORT"))
-    logger.Log("err", http.ListenAndServe(":"+os.Getenv("PORT"), nil))
 }

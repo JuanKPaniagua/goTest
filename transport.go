@@ -167,11 +167,11 @@ func makeCreateAuthorEndpoint(s AuthorService) endpoint.Endpoint {
 func makeGetAuthorByIdEndpoint(s AuthorService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
         req := request.(GetAuthorByIdRequest)
-        publisherDetails, err := s.GetAuthorById(ctx, req.Id)
+        authorDetails, err := s.GetAuthorById(ctx, req.Id)
         if err != nil {
-            return GetAuthorByIdResponse{Author: publisherDetails, Err: "Id not found"}, nil
+            return GetAuthorByIdResponse{Author: authorDetails, Err: "Id not found"}, nil
         }
-        return GetAuthorByIdResponse{Author: publisherDetails, Err: ""}, nil
+        return GetAuthorByIdResponse{Author: authorDetails, Err: ""}, nil
     }
 }
 func makeDeleteAuthorEndpoint(s AuthorService) endpoint.Endpoint {
@@ -206,7 +206,7 @@ func decodeGetAuthorByIdRequest(_ context.Context, r *http.Request) (interface{}
     fmt.Println("-------->>>>into GetById Decoding")
     vars := mux.Vars(r)
     req = GetAuthorByIdRequest{
-        Id: vars["publisherid"],
+        Id: vars["authorid"],
     }
     return req, nil
 }
@@ -215,7 +215,7 @@ func decodeDeleteAuthorRequest(_ context.Context, r *http.Request) (interface{},
     var req DeleteAuthorRequest
     vars := mux.Vars(r)
     req = DeleteAuthorRequest{
-        Authorid: vars["publisherid"],
+        Authorid: vars["authorid"],
     }
     return req, nil
 }
@@ -303,7 +303,6 @@ type (
     }
 	
 	//Authors
-
 	CreateAuthorRequest struct {
         author Author
     }

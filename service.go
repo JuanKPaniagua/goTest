@@ -26,11 +26,11 @@ type Publisher struct {
 }
 
 type Author struct {
-    AuthorId    string `json:"authorId,omitempty"`
-    Name     string `json:"name,omitempty"`
-    Nationality   string `json:"nacionality,omitempty"`
-    Birth string `json:"birth,omitempty"`
-    Genere  string `json:"genere,omitempty"`
+    AuthorId    	string `json:"authorId,omitempty"`
+    Name     		string `json:"name,omitempty"`
+    Nationality   	string `json:"nacionality,omitempty"`
+    Birth 			string `json:"birth,omitempty"`
+    Genere  		string `json:"genere,omitempty"`
 }
 
 type bookservice struct {
@@ -242,10 +242,9 @@ func (s authorservice) GetAuthorById(ctx context.Context, id string) (interface{
     if i == -1 {
         return empty, err
     }
-    author = authors[0]
+    author = authors[i]
     return author, nil
 }
-
 func (s authorservice) DeleteAuthor(ctx context.Context, id string) (string, error) {
     var err error
     msg := ""
@@ -258,7 +257,6 @@ func (s authorservice) DeleteAuthor(ctx context.Context, id string) (string, err
     authors = authors[:len(authors)-1]
     return msg, nil
 }
-
 func (s authorservice) UpdateAuthor(ctx context.Context, author Author) (string, error) {
     var empty = ""
     var err error
