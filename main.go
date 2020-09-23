@@ -13,34 +13,29 @@ func main() {
 
     r := mux.NewRouter()
 
-    var svcB BookService
-    svcB = NewServiceB(logger)
-	
-	var svcP PublisherService
-    svcP = NewServiceP(logger)
-	
-	var svcA AuthorService
-    svcA = NewServiceA(logger)
-	
+    var svc BookService
+    svc = NewService(logger)
 
-	//BOOKS
+    // svc = loggingMiddleware{logger, svc}
+    // svc = instrumentingMiddleware{requestCount, requestLatency, countResult, svc}
+
     CreateBookHandler := httptransport.NewServer(
-        makeCreateBookEndpoint(svcB),
+        makeCreateBookEndpoint(svc),
         decodeCreateBookRequest,
         encodeResponse,
     )
     GetByBookIdHandler := httptransport.NewServer(
-        makeGetBookByIdEndpoint(svcB),
+        makeGetBookByIdEndpoint(svc),
         decodeGetBookByIdRequest,
         encodeResponse,
     )
     DeleteBookHandler := httptransport.NewServer(
-        makeDeleteBookEndpoint(svcB),
+        makeDeleteBookEndpoint(svc),
         decodeDeleteBookRequest,
         encodeResponse,
     )
     UpdateBookHandler := httptransport.NewServer(
-        makeUpdateBookendpoint(svcB),
+        makeUpdateBookendpoint(svc),
         decodeUpdateBookRequest,
         encodeResponse,
     )
@@ -50,55 +45,7 @@ func main() {
     r.Handle("/book/{bookid}", GetByBookIdHandler).Methods("GET")
     r.Handle("/book/{bookid}", DeleteBookHandler).Methods("DELETE")
 
-	//PUBLISHER
-    CreatePublisherHandler := httptransport.NewServer(
-        makeCreatePublisherEndpoint(svcP),
-        decodeCreatePublisherRequest,
-        encodeResponse,
-    )
-    GetByPublisherIdHandler := httptransport.NewServer(
-        makeGetPublisherByIdEndpoint(svcP),
-        decodeGetPublisherByIdRequest,
-        encodeResponse,
-    )
-    DeletePublisherHandler := httptransport.NewServer(
-        makeDeletePublisherEndpoint(svcP),
-        decodeDeletePublisherRequest,
-        encodeResponse,
-    )
-    UpdatePublisherHandler := httptransport.NewServer(
-        makeUpdatePublisherendpoint(svcP),
-        decodeUpdatePublisherRequest,
-        encodeResponse,
-    )
-    http.Handle("/publisher", CreatePublisherHandler)
-    http.Handle("/publisher/update", UpdatePublisherHandler)
-    r.Handle("/publisher/{publisherid}", GetByPublisherIdHandler).Methods("GET")
-    r.Handle("/publisher/{publisherid}", DeletePublisherHandler).Methods("DELETE")
-	
-	//AUTHOR
-    CreateAuthorHandler := httptransport.NewServer(
-        makeCreateAuthorEndpoint(svcA),
-        decodeCreateAuthorRequest,
-        encodeResponse,
-    )
-    GetByAuthorIdHandler := httptransport.NewServer(
-        makeGetAuthorByIdEndpoint(svcA),
-        decodeGetAuthorByIdRequest,
-        encodeResponse,
-    )
-    DeleteAuthorHandler := httptransport.NewServer(
-        makeDeleteAuthorEndpoint(svcA),
-        decodeDeleteAuthorRequest,
-        encodeResponse,
-    )
-    UpdateAuthorHandler := httptransport.NewServer(
-        makeUpdateAuthorendpoint(svcA),
-        decodeUpdateAuthorRequest,
-        encodeResponse,
-    )
-    http.Handle("/author", CreateAuthorHandler)
-    http.Handle("/author/update", UpdateAuthorHandler)
-    r.Handle("/author/{authorid}", GetByAuthorIdHandler).Methods("GET")
-    r.Handle("/author/{authorid}", DeleteAuthorHandler).Methods("DELETE")
+    // http.Handle("/metrics", promhttp.Handler())
+    logger.Log("msg", "HTTP", "addr", ":"+os.Getenv("PORT"))
+    logger.Log("err", http.ListenAndServe(":"+os.Getenv("PORT"), nil))
 }
