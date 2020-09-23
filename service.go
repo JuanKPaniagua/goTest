@@ -165,7 +165,45 @@ func (s bookservice) UpdateBook(ctx context.Context, book Book) (string, error) 
     if i == -1 {
         return empty, err
     }
-    books[i] = book
+	if book.Title != ""{
+		books[i].Title=book.Title
+	}
+	if book.Edition != ""{
+		books[i].Edition=book.Edition
+	}
+	if book.Copyright != ""{
+		books[i].Copyright=book.Copyright
+	}
+	if book.Language != ""{
+		books[i].Language=book.Language
+	}
+	if book.Pages != ""{
+		books[i].Pages=book.Pages
+	}
+	if book.Author != ""{
+		books[i].Author=book.Author
+	}
+	if book.Publisher != ""{
+		books[i].Publisher=book.Publisher
+	}
+	/*if len(book.Author) != 0{
+		lAuthors := []string{}
+		for _,authorB := range book.Author{
+			k := findAuthors(authorB)
+			if k != -1 {
+				lAuthors = append(lAuthors, authorB)
+			}
+		}
+		if(len(lAuthors) != 0){
+			fmt.Printf(lAuthors[0])
+			fmt.Printf(lAuthors[1])
+			books[i].Author=book.Author
+		}
+	}
+	if (book.Publisher != "") && (findPublishers(book.Publisher) == 0){
+		books[i].Publisher=book.Publisher
+	}*/
+    //books[i] = book
     return msg, nil
 }
 
@@ -216,7 +254,19 @@ func (s publisherservice) UpdatePublisher(ctx context.Context, publisher Publish
     if i == -1 {
         return empty, err
     }
-    publishers[i] = publisher
+	if publisher.Name != ""{
+		publishers[i].Name=publisher.Name
+	}
+	if publisher.Country != ""{
+		publishers[i].Country=publisher.Country
+	}
+	if publisher.Founded != ""{
+		publishers[i].Founded=publisher.Founded
+	}
+	if publisher.Genere != ""{
+		publishers[i].Genere=publisher.Genere
+	}
+    //publishers[i] = publisher
     return msg, nil
 }
 
