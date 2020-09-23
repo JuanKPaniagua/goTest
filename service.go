@@ -265,6 +265,18 @@ func (s authorservice) UpdateAuthor(ctx context.Context, author Author) (string,
     if i == -1 {
         return empty, err
     }
-    authors[i] = author
+	if author.Name != ""{
+		authors[i].Name=author.Name
+	}
+	if author.Nationality != ""{
+		authors[i].Nationality=author.Nationality
+	}
+	if author.Birth != ""{
+		authors[i].Birth=author.Birth
+	}
+	if author.Genere != ""{
+		authors[i].Genere=author.Genere
+	}
+    //authors[i] = author
     return msg, nil
 }
