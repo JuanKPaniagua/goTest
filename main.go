@@ -16,8 +16,8 @@ func main() {
     var svcB BookService
     svcB = NewServiceB(logger)
 	
-	var svcP PublisherService
-    svcP = NewServiceP(logger)
+	/*var svcP PublisherService
+    svcP = NewServiceP(logger)*/
 
     // svc = loggingMiddleware{logger, svc}
     // svc = instrumentingMiddleware{requestCount, requestLatency, countResult, svc}
@@ -50,7 +50,7 @@ func main() {
     r.Handle("/book/{bookid}", DeleteBookHandler).Methods("DELETE")
 
 	//PUBLISHER
-    CreatePublisherHandler := httptransport.NewServer(
+    /*CreatePublisherHandler := httptransport.NewServer(
         makeCreatePublisherEndpoint(svcP),
         decodeCreatePublisherRequest,
         encodeResponse,
@@ -75,7 +75,7 @@ func main() {
     http.Handle("/publisher/update", UpdatePublisherHandler)
     r.Handle("/publisher/{publisherid}", GetByPublisherIdHandler).Methods("GET")
     r.Handle("/publisher/{publisherid}", DeletePublisherHandler).Methods("DELETE")
-	
+	*/
     // http.Handle("/metrics", promhttp.Handler())
     logger.Log("msg", "HTTP", "addr", ":"+os.Getenv("PORT"))
     logger.Log("err", http.ListenAndServe(":"+os.Getenv("PORT"), nil))
