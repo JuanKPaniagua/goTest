@@ -29,7 +29,7 @@ func makeGetBookByIdEndpoint(s BookService) endpoint.Endpoint {
     }
 }
 func makeGetAllBooksEndpoint(s BookService) endpoint.Endpoint {
-    return func(ctx context.Context, request interface{}) (interface{}, error) {
+    return func(ctx context.Context) (interface{}, error) {
         req := request.(GetAllBooksRequest)
         bookDetails, err := s.GetAllBooks(ctx)
         if err != nil {
@@ -77,7 +77,6 @@ func decodeGetBookByIdRequest(_ context.Context, r *http.Request) (interface{}, 
 func decodeGetAllBooksRequest(_ context.Context, r *http.Request) (interface{}, error) {
     var req GetAllBooksRequest
     fmt.Println("-------->>>>into GetAll Decoding")
-    vars := mux.Vars(r)
     req = GetAllBooksRequest{}
     return req, nil
 }
