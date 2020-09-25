@@ -161,7 +161,7 @@ func decodeGetPublisherByIdRequest(_ context.Context, r *http.Request) (interfac
     }
     return req, nil
 }
-func decodeGetPublisherByIdRequest(_ context.Context, r *http.Request) (interface{}, error) {
+func decodeGetAllPublishersRequest(_ context.Context, r *http.Request) (interface{}, error) {
     var req GetPublisherByIdRequest
     fmt.Println("-------->>>>into GetById Decoding")
     req = GetAllPublishersRequest{
@@ -250,7 +250,7 @@ func decodeGetAuthorByIdRequest(_ context.Context, r *http.Request) (interface{}
     }
     return req, nil
 }
-func decodeGetAuthorByIdRequest(_ context.Context, r *http.Request) (interface{}, error) {
+func decodeGetAllAuthorsRequest(_ context.Context, r *http.Request) (interface{}, error) {
     var req GetAuthorByIdRequest
     fmt.Println("-------->>>>into GetById Decoding")
     req = GetAuthorByIdRequest{}
