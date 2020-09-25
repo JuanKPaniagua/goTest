@@ -49,7 +49,7 @@ type authorservice struct {
 type BookService interface {
     CreateBook(ctx context.Context, book Book) (string, error)
     GetBookById(ctx context.Context, id string) (interface{}, error)
-	GetAllBooks(ctx context.Context) (interface{})
+	GetAllBooks(ctx context.Context) (interface{},error)
     UpdateBook(ctx context.Context, book Book) (string, error)
     DeleteBook(ctx context.Context, id string) (string, error)
 }
