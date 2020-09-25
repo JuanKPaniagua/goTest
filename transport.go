@@ -28,6 +28,16 @@ func makeGetBookByIdEndpoint(s BookService) endpoint.Endpoint {
         return GetBookByIdResponse{Book: bookDetails, Err: ""}, nil
     }
 }
+func makeGetAllBooksEndpoint(s BookService) endpoint.Endpoint {
+    return func(ctx context.Context, request interface{}) (interface{}, error) {
+        req := request.(GetAllBooksRequest)
+        bookDetails, err := s.GetAllBooks(ctx, req.Id)
+        if err != nil {
+            return GetAllBooksResponse{Books: bookDetails, Err: "Id not found"}, nil
+        }
+        return GetAllBooksResponse{Books: bookDetails, Err: ""}, nil
+    }
+}
 func makeDeleteBookEndpoint(s BookService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
         req := request.(DeleteBookRequest)
@@ -62,6 +72,13 @@ func decodeGetBookByIdRequest(_ context.Context, r *http.Request) (interface{}, 
     req = GetBookByIdRequest{
         Id: vars["bookid"],
     }
+    return req, nil
+}
+func decodeGetAllBooksRequest(_ context.Context, r *http.Request) (interface{}, error) {
+    var req GetAllBooksRequest
+    fmt.Println("-------->>>>into GetAll Decoding")
+    vars := mux.Vars(r)
+    req = GetAllBooksRequest{}
     return req, nil
 }
 func decodeDeleteBookRequest(_ context.Context, r *http.Request) (interface{}, error) {
@@ -250,6 +267,12 @@ type (
     }
     GetBookByIdResponse struct {
         Book interface{} `json:"book,omitempty"`
+        Err  string      `json:"error,omitempty"`
+    }
+	GetAllBooksRequest struct {
+    }
+    GetAllBooksResponse struct {
+        Books interface{} `json:"books,omitempty"`
         Err  string      `json:"error,omitempty"`
     }
 

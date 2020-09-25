@@ -34,6 +34,11 @@ func main() {
         decodeGetBookByIdRequest,
         encodeResponse,
     )
+	GetAllBooks := httptransport.NewServer(
+        makeGetAllBooksEndpoint(svcB),
+        decodeGetAllBooksRequest,
+        encodeResponse,
+    )
     DeleteBookHandler := httptransport.NewServer(
         makeDeleteBookEndpoint(svcB),
         decodeDeleteBookRequest,
@@ -46,6 +51,7 @@ func main() {
     )
     http.Handle("/", r)
     http.Handle("/book", CreateBookHandler)
+	http.Handle("/book/", GetAllBooks)
     http.Handle("/book/update", UpdateBookHandler)
     r.Handle("/book/{bookid}", GetByBookIdHandler).Methods("GET")
     r.Handle("/book/{bookid}", DeleteBookHandler).Methods("DELETE")

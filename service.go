@@ -145,6 +145,14 @@ func (s bookservice) GetBookById(ctx context.Context, id string) (interface{}, e
     book = books[i]
     return book, nil
 }
+
+func (s bookservice) GetAllBooks(ctx context.Context) (interface{}, error) {
+    //var err error
+    var books interface{}
+    books = books
+    return book, nil
+}
+
 func (s bookservice) DeleteBook(ctx context.Context, id string) (string, error) {
     var err error
     msg := ""
@@ -180,9 +188,9 @@ func (s bookservice) UpdateBook(ctx context.Context, book Book) (string, error) 
 	if book.Pages != ""{
 		books[i].Pages=book.Pages
 	}
-	/*if book.Author != ""{
+	if len(book.Author) != 0{
 		books[i].Author=book.Author
-	}*/
+	}
 	if book.Publisher != ""{
 		books[i].Publisher=book.Publisher
 	}
