@@ -148,8 +148,8 @@ func (s bookservice) GetBookById(ctx context.Context, id string) (interface{}, e
 
 func (s bookservice) GetAllBooks(ctx context.Context) (interface{}, error) {
     //var err error
-    var books interface{}
-    books = books
+    var book interface{}
+    book = books
     return book, nil
 }
 
