@@ -67,6 +67,11 @@ func main() {
         decodeGetPublisherByIdRequest,
         encodeResponse,
     )
+	GetAllPublishersHandler := httptransport.NewServer(
+        makeGetAllPublishersEndpoint(svcP),
+        decodeGetAllPublishersRequest,
+        encodeResponse,
+    )
     DeletePublisherHandler := httptransport.NewServer(
         makeDeletePublisherEndpoint(svcP),
         decodeDeletePublisherRequest,
@@ -78,6 +83,7 @@ func main() {
         encodeResponse,
     )
     http.Handle("/publisher", CreatePublisherHandler)
+	http.Handle("/publisher/", GetAllPublishersHandler)
     http.Handle("/publisher/update", UpdatePublisherHandler)
     r.Handle("/publisher/{publisherid}", GetByPublisherIdHandler).Methods("GET")
     r.Handle("/publisher/{publisherid}", DeletePublisherHandler).Methods("DELETE")
@@ -93,6 +99,11 @@ func main() {
         decodeGetAuthorByIdRequest,
         encodeResponse,
     )
+	GetAllAuthorsHandler := httptransport.NewServer(
+        makeGetAllAuthorsEndpoint(svcA),
+        decodeGetAllAuthorsRequest,
+        encodeResponse,
+    )
     DeleteAuthorHandler := httptransport.NewServer(
         makeDeleteAuthorEndpoint(svcA),
         decodeDeleteAuthorRequest,
@@ -104,6 +115,7 @@ func main() {
         encodeResponse,
     )
     http.Handle("/author", CreateAuthorHandler)
+	http.Handle("/author", GetAllAuthorsHandler)
     http.Handle("/author/update", UpdateAuthorHandler)
     r.Handle("/author/{authorid}", GetByAuthorIdHandler).Methods("GET")
     r.Handle("/author/{authorid}", DeleteAuthorHandler).Methods("DELETE")

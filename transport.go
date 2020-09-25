@@ -30,7 +30,6 @@ func makeGetBookByIdEndpoint(s BookService) endpoint.Endpoint {
 }
 func makeGetAllBooksEndpoint(s BookService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
-        //req := request.(GetAllBooksRequest)
         bookDetails, err := s.GetAllBooks(ctx)
         if err != nil {
             return GetAllBooksResponse{Books: bookDetails, Err: "Id not found"}, nil
@@ -117,6 +116,15 @@ func makeGetPublisherByIdEndpoint(s PublisherService) endpoint.Endpoint {
         return GetPublisherByIdResponse{Publisher: publisherDetails, Err: ""}, nil
     }
 }
+func makeGetAllPublishersEndpoint(s PublisherService) endpoint.Endpoint {
+    return func(ctx context.Context, request interface{}) (interface{}, error) {
+        publisherDetails, err := s.GetAllPublishers(ctx)
+        if err != nil {
+            return GetPublisherByIdResponse{Publishers: publisherDetails, Err: "Id not found"}, nil
+        }
+        return GetPublisherByIdResponse{Publishers: publisherDetails, Err: ""}, nil
+    }
+}
 func makeDeletePublisherEndpoint(s PublisherService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
         req := request.(DeletePublisherRequest)
@@ -153,6 +161,13 @@ func decodeGetPublisherByIdRequest(_ context.Context, r *http.Request) (interfac
     }
     return req, nil
 }
+func decodeGetPublisherByIdRequest(_ context.Context, r *http.Request) (interface{}, error) {
+    var req GetPublisherByIdRequest
+    fmt.Println("-------->>>>into GetById Decoding")
+    req = GetAllPublishersRequest{
+    }
+    return req, nil
+}
 func decodeDeletePublisherRequest(_ context.Context, r *http.Request) (interface{}, error) {
     fmt.Println("-------->>>> Into Delete Decoding")
     var req DeletePublisherRequest
@@ -184,6 +199,15 @@ func makeGetAuthorByIdEndpoint(s AuthorService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
         req := request.(GetAuthorByIdRequest)
         publisherDetails, err := s.GetAuthorById(ctx, req.Id)
+        if err != nil {
+            return GetAuthorByIdResponse{Authors: publisherDetails, Err: "Id not found"}, nil
+        }
+        return GetAuthorByIdResponse{Authors: publisherDetails, Err: ""}, nil
+    }
+}
+func makeAllAuthorsEndpoint(s AuthorService) endpoint.Endpoint {
+    return func(ctx context.Context, request interface{}) (interface{}, error) {
+        publisherDetails, err := s.GetAllAuthors(ctx)
         if err != nil {
             return GetAuthorByIdResponse{Author: publisherDetails, Err: "Id not found"}, nil
         }
@@ -224,6 +248,12 @@ func decodeGetAuthorByIdRequest(_ context.Context, r *http.Request) (interface{}
     req = GetAuthorByIdRequest{
         Id: vars["authorid"],
     }
+    return req, nil
+}
+func decodeGetAuthorByIdRequest(_ context.Context, r *http.Request) (interface{}, error) {
+    var req GetAuthorByIdRequest
+    fmt.Println("-------->>>>into GetById Decoding")
+    req = GetAuthorByIdRequest{}
     return req, nil
 }
 func decodeDeleteAuthorRequest(_ context.Context, r *http.Request) (interface{}, error) {
@@ -307,7 +337,12 @@ type (
         Publisher interface{} `json:"publisher,omitempty"`
         Err  string      `json:"error,omitempty"`
     }
-
+	GetAllPublishersRequest struct {
+    }
+    GetAllPublishersResponse struct {
+        Publishers interface{} `json:"publishers,omitempty"`
+        Err  string      `json:"error,omitempty"`
+    }
     DeletePublisherRequest struct {
         Publisherid string `json:"publisherid"`
     }
@@ -340,7 +375,12 @@ type (
         Author interface{} `json:"author,omitempty"`
         Err  string      `json:"error,omitempty"`
     }
-
+	GetAllAuthorsRequest struct {
+    }
+    GetAllAuthorsResponse struct {
+        Authors interface{} `json:"authors,omitempty"`
+        Err  string      `json:"error,omitempty"`
+    }
     DeleteAuthorRequest struct {
         Authorid string `json:"authorid"`
     }

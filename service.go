@@ -57,6 +57,7 @@ type BookService interface {
 type PublisherService interface {
     CreatePublisher(ctx context.Context, publisher Publisher) (string, error)
     GetPublisherById(ctx context.Context, id string) (interface{}, error)
+	GetAllPublishers(ctx context.Context) (interface{}, error)
     UpdatePublisher(ctx context.Context, publisher Publisher) (string, error)
     DeletePublisher(ctx context.Context, id string) (string, error)
 }
@@ -64,6 +65,7 @@ type PublisherService interface {
 type AuthorService interface {
     CreateAuthor(ctx context.Context, author Author) (string, error)
     GetAuthorById(ctx context.Context, id string) (interface{}, error)
+	GetAllAuthors(ctx context.Context) (interface{}, error)
     UpdateAuthor(ctx context.Context, author Author) (string, error)
     DeleteAuthor(ctx context.Context, id string) (string, error)
 }
@@ -242,6 +244,12 @@ func (s publisherservice) GetPublisherById(ctx context.Context, id string) (inte
     return publisher, nil
 }
 
+func (s publisherservice) GetAllPublishers(ctx context.Context) (interface{}, error) {
+    var publisher interface{}
+    publisher = publishers
+    return publisher, nil
+}
+
 func (s publisherservice) DeletePublisher(ctx context.Context, id string) (string, error) {
     var err error
     msg := ""
@@ -304,6 +312,13 @@ func (s authorservice) GetAuthorById(ctx context.Context, id string) (interface{
     author = authors[i]
     return author, nil
 }
+
+func (s authorservice) GetAuthorById(ctx context.Context) (interface{}, error) {
+    var author interface{}
+    author = authors
+    return author, nil
+}
+
 func (s authorservice) DeleteAuthor(ctx context.Context, id string) (string, error) {
     var err error
     msg := ""
