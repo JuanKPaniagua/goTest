@@ -31,7 +31,7 @@ func makeGetBookByIdEndpoint(s BookService) endpoint.Endpoint {
 func makeGetAllBooksEndpoint(s BookService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
         //req := request.(GetAllBooksRequest)
-        bookDetails, err := s.GetAllBooks(ctx, req.Id)
+        bookDetails, err := s.GetAllBooks(ctx)
         if err != nil {
             return GetAllBooksResponse{Books: bookDetails, Err: "Id not found"}, nil
         }
