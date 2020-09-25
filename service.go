@@ -313,7 +313,7 @@ func (s authorservice) GetAuthorById(ctx context.Context, id string) (interface{
     return author, nil
 }
 
-func (s authorservice) GetAuthorById(ctx context.Context) (interface{}, error) {
+func (s authorservice) GetAllAuthors(ctx context.Context) (interface{}, error) {
     var author interface{}
     author = authors
     return author, nil

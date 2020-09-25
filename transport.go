@@ -120,9 +120,9 @@ func makeGetAllPublishersEndpoint(s PublisherService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
         publisherDetails, err := s.GetAllPublishers(ctx)
         if err != nil {
-            return GetPublisherByIdResponse{Publishers: publisherDetails, Err: "Id not found"}, nil
+            return GetAllPublishersResponse{Publishers: publisherDetails, Err: "Id not found"}, nil
         }
-        return GetPublisherByIdResponse{Publishers: publisherDetails, Err: ""}, nil
+        return GetAllPublishersResponse{Publishers: publisherDetails, Err: ""}, nil
     }
 }
 func makeDeletePublisherEndpoint(s PublisherService) endpoint.Endpoint {
@@ -205,13 +205,13 @@ func makeGetAuthorByIdEndpoint(s AuthorService) endpoint.Endpoint {
         return GetAuthorByIdResponse{Authors: publisherDetails, Err: ""}, nil
     }
 }
-func makeAllAuthorsEndpoint(s AuthorService) endpoint.Endpoint {
+func makeGetAllAuthorsEndpoint(s AuthorService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
         publisherDetails, err := s.GetAllAuthors(ctx)
         if err != nil {
-            return GetAuthorByIdResponse{Author: publisherDetails, Err: "Id not found"}, nil
+            return GetAllAuthorsResponse{Author: publisherDetails, Err: "Id not found"}, nil
         }
-        return GetAuthorByIdResponse{Author: publisherDetails, Err: ""}, nil
+        return GetAllAuthorsResponse{Author: publisherDetails, Err: ""}, nil
     }
 }
 func makeDeleteAuthorEndpoint(s AuthorService) endpoint.Endpoint {
