@@ -77,7 +77,6 @@ func decodeGetBookByIdRequest(_ context.Context, r *http.Request) (interface{}, 
 func decodeGetAllBooksRequest(_ context.Context, r *http.Request) (interface{}, error) {
     var req GetAllBooksRequest
     fmt.Println("-------->>>>into GetAll Decoding")
-    vars := mux.Vars(r)
     req = GetAllBooksRequest{}
     return req, nil
 }
