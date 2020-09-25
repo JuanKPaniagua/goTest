@@ -115,7 +115,7 @@ func main() {
         encodeResponse,
     )
     http.Handle("/author", CreateAuthorHandler)
-	http.Handle("/author", GetAllAuthorsHandler)
+	http.Handle("/author/", GetAllAuthorsHandler)
     http.Handle("/author/update", UpdateAuthorHandler)
     r.Handle("/author/{authorid}", GetByAuthorIdHandler).Methods("GET")
     r.Handle("/author/{authorid}", DeleteAuthorHandler).Methods("DELETE")
