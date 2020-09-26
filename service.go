@@ -194,6 +194,7 @@ func (s bookservice) GetBookByA(ctx context.Context, id string) (interface{}, er
     var err error
     var author interface{}
     var empty interface{}
+	var temp Author[]
     i := findBooks(id)
     if i == -1 {
         return empty, err
@@ -202,9 +203,10 @@ func (s bookservice) GetBookByA(ctx context.Context, id string) (interface{}, er
 		k := findAuthors(authorB)
 		if k != -1 {
 			empty=k;
-			author = append(author,k)
+			temp = append(temp,k)
 		}
 	}
+	author= temp
     return author, nil
 }
 
