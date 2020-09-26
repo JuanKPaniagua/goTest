@@ -315,7 +315,7 @@ func (s publisherservice) GetPublisherByB(ctx context.Context, id string) (inter
     if i == -1 {
         return empty, err
     }
-    publisher = findBooksbyAuthors(i)
+    publisher = findBooksbyAuthors(id)
     return publisher, nil
 }
 
@@ -396,7 +396,7 @@ func (s authorservice) GetAuthorById(ctx context.Context, id string) (interface{
     if i == -1 {
         return empty, err
     }
-    author = findBooksbyAuthors(i)
+    author = findBooksbyAuthors(id)
     return author, nil
 }
 
