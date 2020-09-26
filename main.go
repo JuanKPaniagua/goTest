@@ -61,7 +61,7 @@ func main() {
     )
     http.Handle("/", r)
     http.Handle("/book", CreateBookHandler)
-	http.Handle("/book/", GetAllBooks)
+	http.Handle("/books/", GetAllBooks)
     http.Handle("/book/update", UpdateBookHandler)
     r.Handle("/book/{bookid}", GetByBookIdHandler).Methods("GET")
 	r.Handle("/book/{bookid}/publishers", GetByBookPHandler).Methods("GET")
@@ -95,7 +95,7 @@ func main() {
         encodeResponse,
     )
     http.Handle("/publisher", CreatePublisherHandler)
-	http.Handle("/publisher/", GetAllPublishersHandler)
+	http.Handle("/publishers/", GetAllPublishersHandler)
     http.Handle("/publisher/update", UpdatePublisherHandler)
     r.Handle("/publisher/{publisherid}", GetByPublisherIdHandler).Methods("GET")
     r.Handle("/publisher/{publisherid}", DeletePublisherHandler).Methods("DELETE")
@@ -127,7 +127,7 @@ func main() {
         encodeResponse,
     )
     http.Handle("/author", CreateAuthorHandler)
-	http.Handle("/author/", GetAllAuthorsHandler)
+	http.Handle("/authors/", GetAllAuthorsHandler)
     http.Handle("/author/update", UpdateAuthorHandler)
     r.Handle("/author/{authorid}", GetByAuthorIdHandler).Methods("GET")
     r.Handle("/author/{authorid}", DeleteAuthorHandler).Methods("DELETE")
