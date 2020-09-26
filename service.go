@@ -59,6 +59,7 @@ type BookService interface {
 type PublisherService interface {
     CreatePublisher(ctx context.Context, publisher Publisher) (string, error)
     GetPublisherById(ctx context.Context, id string) (interface{}, error)
+	GetPublisherByB(ctx context.Context, id string) (interface{}, error)
 	GetAllPublishers(ctx context.Context) (interface{}, error)
     UpdatePublisher(ctx context.Context, publisher Publisher) (string, error)
     DeletePublisher(ctx context.Context, id string) (string, error)
@@ -67,6 +68,7 @@ type PublisherService interface {
 type AuthorService interface {
     CreateAuthor(ctx context.Context, author Author) (string, error)
     GetAuthorById(ctx context.Context, id string) (interface{}, error)
+	GetAuthorByB(ctx context.Context, id string) (interface{}, error)
 	GetAllAuthors(ctx context.Context) (interface{}, error)
     UpdateAuthor(ctx context.Context, author Author) (string, error)
     DeleteAuthor(ctx context.Context, id string) (string, error)
@@ -125,23 +127,23 @@ func findAuthors(x string) int {
     return -1
 }
 
-func findBooksbyAuthors(x string) []int {
-	y:=[]int{}
+func findBooksbyAuthors(x string) []Book {
+	y:=[]Book{}
     for i, _ := range books {
 		for _,z := range books[i].Author{
 			if z == x {
-				y = append(y, i)
+				y = append(y, book)
 			}
 		} 
     }
     return y
 }
 
-func findBooksbyPublishers (x string) []int {
-	y:=[]int{}
+func findBooksbyPublishers (x string) []Book{
+	y:=[]Book{}
     for i, book := range books {
 		if x == book.Publisher {
-			y = append(y, i)
+			y = append(y, book)
 		}
     }
     return y
@@ -305,6 +307,18 @@ func (s publisherservice) GetPublisherById(ctx context.Context, id string) (inte
     return publisher, nil
 }
 
+func (s publisherservice) GetPublisherByB(ctx context.Context, id string) (interface{}, error) {
+    var err error
+    var publisher interface{}
+    var empty interface{}
+    i := findPublishers(id)
+    if i == -1 {
+        return empty, err
+    }
+    publisher = findBooksbyAuthors(i)
+    return publisher, nil
+}
+
 func (s publisherservice) GetAllPublishers(ctx context.Context) (interface{}, error) {
     var publisher interface{}
     publisher = publishers
@@ -371,6 +385,18 @@ func (s authorservice) GetAuthorById(ctx context.Context, id string) (interface{
         return empty, err
     }
     author = authors[i]
+    return author, nil
+}
+
+func (s authorservice) GetAuthorById(ctx context.Context, id string) (interface{}, error) {
+    var err error
+    var author interface{}
+    var empty interface{}
+    i := findAuthors(id)
+    if i == -1 {
+        return empty, err
+    }
+    author = findBooksbyAuthors(i)
     return author, nil
 }
 

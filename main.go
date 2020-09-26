@@ -79,6 +79,11 @@ func main() {
         decodeGetPublisherByIdRequest,
         encodeResponse,
     )
+	GetByPublisherBHandler := httptransport.NewServer(
+        makeGetPublisherByBEndpoint(svcP),
+        decodeGetPublisherByBRequest,
+        encodeResponse,
+    )
 	GetAllPublishersHandler := httptransport.NewServer(
         makeGetAllPublishersEndpoint(svcP),
         decodeGetAllPublishersRequest,
@@ -98,6 +103,7 @@ func main() {
 	http.Handle("/publishers/", GetAllPublishersHandler)
     http.Handle("/publisher/update", UpdatePublisherHandler)
     r.Handle("/publisher/{publisherid}", GetByPublisherIdHandler).Methods("GET")
+	r.Handle("/publisher/{publisherid}/books", GetByPublisherBHandler).Methods("GET")
     r.Handle("/publisher/{publisherid}", DeletePublisherHandler).Methods("DELETE")
 	
 	//AUTHOR
@@ -130,6 +136,7 @@ func main() {
 	http.Handle("/authors/", GetAllAuthorsHandler)
     http.Handle("/author/update", UpdateAuthorHandler)
     r.Handle("/author/{authorid}", GetByAuthorIdHandler).Methods("GET")
+	r.Handle("/author/{authorid}/books", GetByAuthorBHandler).Methods("GET")
     r.Handle("/author/{authorid}", DeleteAuthorHandler).Methods("DELETE")
 	
 	logger.Log("msg", "HTTP", "addr", ":"+os.Getenv("PORT"))
