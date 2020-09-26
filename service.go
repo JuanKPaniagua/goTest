@@ -141,7 +141,7 @@ func findBooksbyAuthors(x string) []Book {
 
 func findBooksbyPublishers (x string) []Book{
 	y:=[]Book{}
-    for i, book := range books {
+    for _, book := range books {
 		if x == book.Publisher {
 			y = append(y, book)
 		}
