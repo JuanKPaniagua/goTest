@@ -117,6 +117,11 @@ func main() {
         decodeGetAuthorByIdRequest,
         encodeResponse,
     )
+	GetByAuthorBHandler := httptransport.NewServer(
+        makeGetAuthorByBEndpoint(svcA),
+        decodeGetAuthorByBRequest,
+        encodeResponse,
+    )
 	GetAllAuthorsHandler := httptransport.NewServer(
         makeGetAllAuthorsEndpoint(svcA),
         decodeGetAllAuthorsRequest,
