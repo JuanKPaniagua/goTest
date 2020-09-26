@@ -203,7 +203,7 @@ func (s bookservice) GetBookByA(ctx context.Context, id string) (interface{}, er
 		k := findAuthors(authorB)
 		if k != -1 {
 			empty=k;
-			temp = append(temp,k)
+			temp = append(temp,authors[k])
 		}
 	}
 	author= temp
