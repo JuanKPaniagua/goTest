@@ -49,6 +49,8 @@ type authorservice struct {
 type BookService interface {
     CreateBook(ctx context.Context, book Book) (string, error)
     GetBookById(ctx context.Context, id string) (interface{}, error)
+	GetBookByP(ctx context.Context, id string) (interface{}, error)
+	GetBookByA(ctx context.Context, id string) (interface{}, error)
 	GetAllBooks(ctx context.Context) (interface{},error)
     UpdateBook(ctx context.Context, book Book) (string, error)
     DeleteBook(ctx context.Context, id string) (string, error)
@@ -123,6 +125,28 @@ func findAuthors(x string) int {
     return -1
 }
 
+func findBooksbyAuthors(x string) []int {
+	y:=[]int{}
+    for i, _ := range books {
+		for _,z := range books[i].Author{
+			if z == x {
+				y = append(y, i)
+			}
+		} 
+    }
+    return y
+}
+
+func findBooksbyPublishers (x string) []int {
+	y:=[]int{}
+    for i, book := range books {
+		if x == book.Publisher {
+			y = append(y, i)
+		}
+    }
+    return y
+}
+
 //Books
 
 func NewServiceB(logger log.Logger) BookService {
@@ -138,6 +162,53 @@ func (s bookservice) CreateBook(ctx context.Context, book Book) (string, error) 
 }
 
 func (s bookservice) GetBookById(ctx context.Context, id string) (interface{}, error) {
+    var err error
+    var book interface{}
+    var empty interface{}
+    i := findBooks(id)
+    if i == -1 {
+        return empty, err
+    }
+    book = books[i]
+    return book, nil
+}
+
+func (s bookservice) GetBookByP(ctx context.Context, id string) (interface{}, error) {
+    var err error
+    var publisher interface{}
+    var empty interface{}
+    i := findBooks(id)
+    if i == -1 {
+        return empty, err
+    }
+	for _,publisherB := range books[i].Publisher{
+		k := findPublishers(publisherB)
+		if k != -1 {
+			publisher = append(publisher,k)
+		}
+	}
+    return publisher, nil
+}
+
+func (s bookservice) GetBookByA(ctx context.Context, id string) (interface{}, error) {
+    var err error
+    var author interface{}
+    var empty interface{}
+    i := findBooks(id)
+    if i == -1 {
+        return empty, err
+    }
+	for _,authorB := range books[i].Author{
+		k := findAuthors(authorB)
+		if k != -1 {
+			author = append(author,k)
+		}
+	}
+    return author, nil
+}
+
+
+func (s bookservice) GetBookByA(ctx context.Context, id string) (interface{}, error) {
     var err error
     var book interface{}
     var empty interface{}

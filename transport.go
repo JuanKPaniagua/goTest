@@ -28,6 +28,26 @@ func makeGetBookByIdEndpoint(s BookService) endpoint.Endpoint {
         return GetBookByIdResponse{Book: bookDetails, Err: ""}, nil
     }
 }
+func makeGetBookByPEndpoint(s BookService) endpoint.Endpoint {
+    return func(ctx context.Context, request interface{}) (interface{}, error) {
+        req := request.(GetBookByPRequest)
+        publisherDetails, err := s.GetBookByP(ctx, req.Id)
+        if err != nil {
+            return GetBookByPResponse{Publishers: publisherDetails, Err: "Id not found"}, nil
+        }
+        return GetBookByPResponse{Publishers: publisherDetails, Err: ""}, nil
+    }
+}
+func makeGetBookByAEndpoint(s BookService) endpoint.Endpoint {
+    return func(ctx context.Context, request interface{}) (interface{}, error) {
+        req := request.(GetBookByARequest)
+        authorDetails, err := s.GetBookByA(ctx, req.Id)
+        if err != nil {
+            return GetBookByAResponse{Authors: authorDetails, Err: "Id not found"}, nil
+        }
+        return GetBookByAResponse{Authors: authorDetails, Err: ""}, nil
+    }
+}
 func makeGetAllBooksEndpoint(s BookService) endpoint.Endpoint {
     return func(ctx context.Context, request interface{}) (interface{}, error) {
         bookDetails, err := s.GetAllBooks(ctx)
@@ -69,6 +89,24 @@ func decodeGetBookByIdRequest(_ context.Context, r *http.Request) (interface{}, 
     fmt.Println("-------->>>>into GetById Decoding")
     vars := mux.Vars(r)
     req = GetBookByIdRequest{
+        Id: vars["bookid"],
+    }
+    return req, nil
+}
+func decodeGetBookByPRequest(_ context.Context, r *http.Request) (interface{}, error) {
+    var req GetBookByPRequest
+    fmt.Println("-------->>>>into GetByP Decoding")
+    vars := mux.Vars(r)
+    req = GetBookByPRequest{
+        Id: vars["bookid"],
+    }
+    return req, nil
+}
+func decodeGetBookByARequest(_ context.Context, r *http.Request) (interface{}, error) {
+    var req GetBookByARequest
+    fmt.Println("-------->>>>into GetByA Decoding")
+    vars := mux.Vars(r)
+    req = GetBookByARequest{
         Id: vars["bookid"],
     }
     return req, nil
@@ -296,6 +334,20 @@ type (
     }
     GetBookByIdResponse struct {
         Book interface{} `json:"book,omitempty"`
+        Err  string      `json:"error,omitempty"`
+    }
+	 GetBookByPRequest struct {
+        Id string `json:"bookid"`
+    }
+    GetBookByPResponse struct {
+        Publisher interface{} `json:"publisher,omitempty"`
+        Err  string      `json:"error,omitempty"`
+    }
+	 GetBookByARequest struct {
+        Id string `json:"bookid"`
+    }
+    GetBookByAResponse struct {
+        Author interface{} `json:"author,omitempty"`
         Err  string      `json:"error,omitempty"`
     }
 	GetAllBooksRequest struct {
