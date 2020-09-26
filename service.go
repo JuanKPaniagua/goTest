@@ -177,16 +177,16 @@ func (s bookservice) GetBookByP(ctx context.Context, id string) (interface{}, er
     var err error
     var publisher interface{}
     var empty interface{}
+	
     i := findBooks(id)
     if i == -1 {
         return empty, err
     }
-	for _,publisherB := range books[i].Publisher{
-		k := findPublishers(publisherB)
-		if k != -1 {
-			publisher = append(publisher,k)
-		}
-	}
+	j := findPublishers(books[i].Publisher)
+    if j == -1 {
+        return empty, err
+    }
+	publisher=publishers[j]
     return publisher, nil
 }
 
@@ -201,23 +201,11 @@ func (s bookservice) GetBookByA(ctx context.Context, id string) (interface{}, er
 	for _,authorB := range books[i].Author{
 		k := findAuthors(authorB)
 		if k != -1 {
+			empty=k;
 			author = append(author,k)
 		}
 	}
     return author, nil
-}
-
-
-func (s bookservice) GetBookByA(ctx context.Context, id string) (interface{}, error) {
-    var err error
-    var book interface{}
-    var empty interface{}
-    i := findBooks(id)
-    if i == -1 {
-        return empty, err
-    }
-    book = books[i]
-    return book, nil
 }
 
 func (s bookservice) GetAllBooks(ctx context.Context) (interface{}, error) {

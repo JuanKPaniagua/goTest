@@ -340,14 +340,14 @@ type (
         Id string `json:"bookid"`
     }
     GetBookByPResponse struct {
-        Publisher interface{} `json:"publisher,omitempty"`
+        Publishers interface{} `json:"publishers,omitempty"`
         Err  string      `json:"error,omitempty"`
     }
 	 GetBookByARequest struct {
         Id string `json:"bookid"`
     }
     GetBookByAResponse struct {
-        Author interface{} `json:"author,omitempty"`
+        Authors interface{} `json:"authors,omitempty"`
         Err  string      `json:"error,omitempty"`
     }
 	GetAllBooksRequest struct {
