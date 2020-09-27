@@ -139,7 +139,7 @@ func findBooksbyAuthors(x string) []Book {
     return y
 }
 
-func findBooksbyPublishers (x string) []Book{
+func findBooksbyPublishers (x string) []Book {
 	y:=[]Book{}
     for _, book := range books {
 		if x == book.Publisher {
@@ -315,7 +315,8 @@ func (s publisherservice) GetPublisherByB(ctx context.Context, id string) (inter
     if i == -1 {
         return empty, err
     }
-    publisher = findBooksbyAuthors(id)
+	publisher = id
+    //publisher = findBooksbyAuthors(id)
     return publisher, nil
 }
 
