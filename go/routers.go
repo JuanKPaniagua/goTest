@@ -55,55 +55,6 @@ var routes = Routes{
 	},
 
 	Route{
-		"AuthorsAuthorIdBooksGet",
-		strings.ToUpper("Get"),
-		"/authors/{authorId}/books",
-		AuthorsAuthorIdBooksGet,
-	},
-
-	Route{
-		"AuthorsAuthorIdDelete",
-		strings.ToUpper("Delete"),
-		"/authors/{authorId}",
-		AuthorsAuthorIdDelete,
-	},
-
-	Route{
-		"AuthorsAuthorIdGet",
-		strings.ToUpper("Get"),
-		"/authors/{authorId}",
-		AuthorsAuthorIdGet,
-	},
-
-	Route{
-		"AuthorsAuthorIdPost",
-		strings.ToUpper("Post"),
-		"/authors/{authorId}",
-		AuthorsAuthorIdPost,
-	},
-
-	Route{
-		"AuthorsGet",
-		strings.ToUpper("Get"),
-		"/authors/",
-		AuthorsGet,
-	},
-
-	Route{
-		"AuthorsPut",
-		strings.ToUpper("Put"),
-		"/authors/",
-		AuthorsPut,
-	},
-
-	Route{
-		"BooksBookIdAuthorsGet",
-		strings.ToUpper("Get"),
-		"/books/{bookId}/authors",
-		BooksBookIdAuthorsGet,
-	},
-
-	Route{
 		"BooksBookIdDelete",
 		strings.ToUpper("Delete"),
 		"/books/{bookId}",
@@ -118,72 +69,16 @@ var routes = Routes{
 	},
 
 	Route{
-		"BooksBookIdPost",
-		strings.ToUpper("Post"),
+		"BooksBookIdPut",
+		strings.ToUpper("Put"),
 		"/books/{bookId}",
-		BooksBookIdPost,
+		BooksBookIdPut,
 	},
 
 	Route{
-		"BooksBookIdPublishersGet",
-		strings.ToUpper("Get"),
-		"/books/{bookId}/publishers",
-		BooksBookIdPublishersGet,
-	},
-
-	Route{
-		"BooksGet",
-		strings.ToUpper("Get"),
-		"/books/",
-		BooksGet,
-	},
-
-	Route{
-		"BooksPut",
-		strings.ToUpper("Put"),
-		"/books/",
-		BooksPut,
-	},
-
-	Route{
-		"PublishersGet",
-		strings.ToUpper("Get"),
-		"/publishers/",
-		PublishersGet,
-	},
-
-	Route{
-		"PublishersPublisherIdBooksGet",
-		strings.ToUpper("Get"),
-		"/publishers/{publisherId}/books",
-		PublishersPublisherIdBooksGet,
-	},
-
-	Route{
-		"PublishersPublisherIdDelete",
-		strings.ToUpper("Delete"),
-		"/publishers/{publisherId}",
-		PublishersPublisherIdDelete,
-	},
-
-	Route{
-		"PublishersPublisherIdGet",
-		strings.ToUpper("Get"),
-		"/publishers/{publisherId}",
-		PublishersPublisherIdGet,
-	},
-
-	Route{
-		"PublishersPublisherIdPost",
+		"BooksPost",
 		strings.ToUpper("Post"),
-		"/publishers/{publisherId}",
-		PublishersPublisherIdPost,
-	},
-
-	Route{
-		"PublishersPut",
-		strings.ToUpper("Put"),
-		"/publishers/",
-		PublishersPut,
+		"/books/",
+		BooksPost,
 	},
 }
