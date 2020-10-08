@@ -1,0 +1,981 @@
+cityId,name,country
+city1,Novara,Italy
+city2,Aosta,Italy
+city3,Turin,Italy
+city4,Hong Kong,Hong Kong
+city5,Taipei,Chinese Taipei
+city6,Naples,Italy
+city7,Sorrento,Italy
+city8,Rimini,Italy
+city9,Scafati,Italy
+city10,Benevento,Italy
+city11,Riccione,Italy
+city12,Calicut,India
+city13,Bangor,Northern Ireland
+city14,Vammala,Finland
+city15,Tønsberg,Norway
+city16,Belfast,Northern Ireland
+city17,Kotka,Finland
+city18,Kópavogur,Iceland
+city19,Crewe,England
+city20,Dunfermline,Scotland
+city21,Brussels,Belgium
+city22,Tyresö,Sweden
+city23,Dumbarton,Scotland
+city24,Groningen,Netherlands
+city25,Solothurn,Switzerland
+city26,Valence,France
+city27,Tårnby,Denmark
+city28,Dublin,Republic of Ireland
+city29,Genoa,Italy
+city30,Lisbon,Portugal
+city31,Bergisch Gladbach,Germany
+city32,Venray,Netherlands
+city33,Coimbra,Portugal
+city34,Bangkok,Thailand
+city35,Glasgow,Scotland
+city36,Oosterhout,Netherlands
+city37,Vicenza,Italy
+city38,Delmenhorst,Germany
+city39,Meaux,France
+city40,Leeds,England
+city41,Lugano,Switzerland
+city42,Sollefteå,Sweden
+city43,Porto,Portugal
+city44,Lillestrøm,Norway
+city45,Siegen,Germany
+city46,Ronneby,Sweden
+city47,Porvoo,Finland
+city48,Rome,Italy
+city49,Elverum,Norway
+city50,Sønderborg,Denmark
+city51,Burgdorf,Switzerland
+city52,Reading,England
+city53,Nouméa,New Caledonia
+city54,Pauillac,France
+city55,Lüdenscheid,Germany
+city56,Hjørring,Denmark
+city57,Linköping,Sweden
+city58,Gothenburg,Sweden
+city59,Luton,England
+city60,Tuusula,Finland
+city61,Odense,Denmark
+city62,Oslo,Norway
+city63,Scotland,Scotland
+city64,Leeuwarden,Netherlands
+city65,England,England
+city66,Zaventem,Belgium
+city67,Hungary,Hungary
+city68,Turku,Finland
+city69,Republic of Ireland,Republic of Ireland
+city70,Northern Ireland,Northern Ireland
+city71,Gyöngyös,Hungary
+city72,Cuenca,Spain
+city73,Lüneburg,Germany
+city74,Padova,Italy
+city75,Jönköping,Sweden
+city76,Cork,Republic of Ireland
+city77,Cambrai,France
+city78,Palma,Spain
+city79,Helsingborg,Sweden
+city80,Renens,Switzerland
+city81,Aalst,Belgium
+city82,Niederbronn,France
+city83,Potenza,Italy
+city84,Christchurch,New Zealand
+city85,Spain,Spain
+city86,Karlskoga,Sweden
+city87,Hoogeveen,Netherlands
+city88,Vejle,Denmark
+city89,Basel,Switzerland
+city90,Eger,Hungary
+city91,Modena,Italy
+city92,Moss,Norway
+city93,Drammen,Norway
+city94,Budapest,Hungary
+city95,Kerava,Finland
+city96,Mouscron,Belgium
+city97,Finland,Finland
+city98,Nuth,Netherlands
+city99,Blackburn,England
+city100,Czechoslovakia,Czechoslovakia
+city101,Szolnok,Hungary
+city102,Burghausen,Germany
+city103,Sofia,Bulgaria
+city104,Lucé,France
+city105,Aranjuez,Spain
+city106,Valkenswaard,Netherlands
+city107,Tienen,Belgium
+city108,Torrent,Spain
+city109,Andria,Italy
+city110,Hodonín,Czechoslovakia
+city111,Aalborg,Denmark
+city112,Castelsarrasin,France
+city113,Stanke Dimitrov,Bulgaria
+city114,San Benedetto del Tronto,Italy
+city115,Thonon,France
+city116,Herning,Denmark
+city117,Pforzheim,Germany
+city118,Figueres,Spain
+city119,Loison-sous-Lens,France
+city120,Nesbyen,Norway
+city121,Copenhagen,Denmark
+city122,Levanto,Italy
+city123,Palma del Río,Spain
+city124,Baja,Hungary
+city125,Frýdek-Místek,Czechoslovakia
+city126,Klepp,Norway
+city127,Vantaa,Finland
+city128,Binningen,Switzerland
+city129,Mariestad,Sweden
+city130,Horten,Norway
+city131,Borås,Sweden
+city132,Antwerp,Belgium
+city133,Caslano,Switzerland
+city134,Passau,Germany
+city135,Rijsoord,Netherlands
+city136,Zürich,Switzerland
+city137,Vallauris,France
+city138,Bratislava,Czechoslovakia
+city139,Reggio Emilia,Italy
+city140,Kaiserslautern,Germany
+city141,Delft,Netherlands
+city142,Brisbane,Australia
+city143,Osnabrück,Germany
+city144,Varkaus,Finland
+city145,Brentford,England
+city146,Straubing,Germany
+city147,Bern,Switzerland
+city148,Knurów,Poland
+city149,Kongsvinger,Norway
+city150,Bulgaria,Bulgaria
+city151,Benicàssim,Spain
+city152,Koog aan de Zaan,Netherlands
+city153,Marburg,Germany
+city154,Antequera,Spain
+city155,Ypres,Belgium
+city156,Melun,France
+city157,Porsgrunn,Norway
+city158,Sheffield,England
+city159,Manchester,England
+city160,Kaatsheuvel,Netherlands
+city161,Düsseldorf,Germany
+city162,Kapellen,Belgium
+city163,Metz,France
+city164,Tampere,Finland
+city165,Oristano,Italy
+city166,Sopron,Hungary
+city167,Gorzów,Poland
+city168,Portici,Italy
+city169,Cartagena,Spain
+city170,Kristiansand,Norway
+city171,Malmö,Sweden
+city172,Wycombe,England
+city173,Castellammare di Stabia,Italy
+city174,Denekamp,Netherlands
+city175,Bochum,Germany
+city176,Espoo,Finland
+city177,Lagos,Nigeria
+city178,Accra,Ghana
+city179,Port-au-Prince,Haiti
+city180,Maringá,Brazil
+city181,Conakry,Guinea
+city182,Sydney,Australia
+city183,Fukuoka,Japan
+city184,Yaoundé,Cameroon
+city185,Frederikshavn,Denmark
+city186,Aarau,Switzerland
+city187,Poland,Poland
+city188,USSR,Russia
+city189,Greece,Greece
+city190,Sulmona,Italy
+city191,Palencia,Spain
+city192,Geel,Belgium
+city193,Guangzhou,China PR
+city194,Foshan,China PR
+city195,Jiangmen,China PR
+city196,Zhongshan,China PR
+city197,Lucena,Spain
+city198,Quimper,France
+city199,Komotini,Greece
+city200,Yeovil,England
+city201,Romania,Romania
+city202,Perth,Scotland
+city203,Modum,Norway
+city204,Púchov,Czechoslovakia
+city205,Drachten,Netherlands
+city206,Akranes,Iceland
+city207,Russia,Russia
+city208,Rotherham,England
+city209,Raalte,Netherlands
+city210,Brașov,Romania
+city211,Kolbotn,Norway
+city212,Albi,France
+city213,Kraków,Poland
+city214,Solofra,Italy
+city215,Rheine,Germany
+city216,Switzerland,Switzerland
+city217,Moscow,Russia
+city218,Jesolo,Italy
+city219,Kuching,Malaysia
+city220,Gvarv,Norway
+city221,Koksijde,Belgium
+city222,Santa Sofia,Italy
+city223,Cesenatico,Italy
+city224,Cesena,Italy
+city225,New Hyde Park,United States
+city226,Kaunas,Lithuania
+city227,Nynäshamn,Sweden
+city228,Kiev,Ukraine
+city229,Ukraine,Ukraine
+city230,Wales,Wales
+city231,Latvia,Latvia
+city232,Slovenia,Slovenia
+city233,Reykjavík,Iceland
+city234,Lommel,Belgium
+city235,Blagoevgrad,Bulgaria
+city236,Bratislava,Slovakia
+city237,Bergen,Norway
+city238,Câmpina,Romania
+city239,Senigallia,Italy
+city240,Winterthur,Switzerland
+city241,Wohlen,Switzerland
+city242,Faro,Portugal
+city243,Cosenza,Italy
+city244,Osuna,Spain
+city245,Zagreb,Croatia
+city246,Bradford,England
+city247,Ozoir-la-Ferrière,France
+city248,Fiães,Portugal
+city249,Nottingham,England
+city250,Silves,Portugal
+city251,Portimão,Portugal
+city252,Olhão,Portugal
+city253,Vila Real de Santo António,Portugal
+city254,Wormerveer,Netherlands
+city255,Quarteira,Portugal
+city256,Loulé,Portugal
+city257,Angoulême,France
+city258,Bielefeld,Germany
+city259,Stirling,Scotland
+city260,Xanthi,Greece
+city261,Roudnice nad Labem,Czech Republic
+city262,Tortosa,Spain
+city263,Swansea,Wales
+city264,Staré Město,Czech Republic
+city265,Schiltigheim,France
+city266,Ljubljana,Slovenia
+city267,Selyatino,Russia
+city268,Ozolnieki,Latvia
+city269,Deeside,Wales
+city270,Kiustendil,Bulgaria
+city271,Barreiro,Portugal
+city272,Idestrup,Denmark
+city273,Gävle,Sweden
+city274,Montreal,Canada
+city275,Voronezh,Russia
+city276,Slovakia,Slovakia
+city277,Sindelfingen,Germany
+city278,Prague,Czech Republic
+city279,Rotterdam,Netherlands
+city280,Wronki,Poland
+city281,Weingarten,Germany
+city282,Aberdeen,Scotland
+city283,Katerini,Greece
+city284,Port Moresby,Papua New Guinea
+city285,Mantova,Italy
+city286,Kecskemét,Hungary
+city287,Brighton,England
+city288,South Africa,South Africa
+city289,Carrara,Italy
+city290,Freetown,Sierra Leone
+city291,Zambia,Zambia
+city292,Watford,England
+city293,Uberlândia,Brazil
+city294,Ghana,Ghana
+city295,Luanda,Angola
+city296,Ibadan,Nigeria
+city297,Lagos,Portugal
+city298,Johannesburg,South Africa
+city299,Karlstad,Sweden
+city300,Västerås,Sweden
+city301,Solna,Sweden
+city302,Gorlice,Poland
+city303,Příbram,Czech Republic
+city304,Austria,Austria
+city305,Ulefoss,Norway
+city306,Kota Kinabalu,Malaysia
+city307,Toftir,Faroe Islands
+city308,Yugoslavia,FR Yugoslavia
+city309,Mogilev,Belarus
+city310,Llanelli,Wales
+city311,Tallinn,Estonia
+city312,Borlänge,Sweden
+city313,Verona,Italy
+city314,Istanbul,Turkey
+city315,Dumfries,Scotland
+city316,Bangor,Wales
+city317,Sunderland,England
+city318,London,England
+city319,Pozoblanco,Spain
+city320,Paisley,Scotland
+city321,Montpellier,France
+city322,Évora,Portugal
+city323,Benavente,Portugal
+city324,Albufeira,Portugal
+city325,Algarve,Portugal
+city326,Castelló de la Plana,Spain
+city327,Barry,Wales
+city328,Donetsk,Ukraine
+city329,Osijek,Croatia
+city330,Namur,Belgium
+city331,Jena,Germany
+city332,Waregem,Belgium
+city333,Gifhorn,Germany
+city334,Poreč,Croatia
+city335,Visby,Sweden
+city336,Brest,Belarus
+city337,Angers,France
+city338,Gandia,Spain
+city339,Den Ham,Netherlands
+city340,Trondheim,Norway
+city341,Kędzierzyn-Koźle,Poland
+city342,Sassenheim,Netherlands
+city343,Čelákovice,Czech Republic
+city344,Bobruisk,Belarus
+city345,Mestre,Italy
+city346,Orlando,United States
+city347,Miami,United States
+city348,Birmingham,United States
+city349,"Washington, D.C."
+city350,"Athens, Georgia"
+city351,Lázně Bohdaneč,Czech Republic
+city352,Levice,Slovakia
+city353,Alcanena,Portugal
+city354,Marly,Switzerland
+city355,Avranches,France
+city356,Michalovce,Slovakia
+city357,Helmond,Netherlands
+city358,Kutina,Croatia
+city359,Koblenz,Germany
+city360,Unterhaching,Germany
+city361,Lagoa,Portugal
+city362,Alvor,Portugal
+city363,Guangdong,China PR
+city364,Mar del Plata,Argentina
+city365,Paderne,Portugal
+city366,Mozambique,Mozambique
+city367,Cairo,Egypt
+city368,Guatemala City,Guatemala
+city369,Macoya,Trinidad and Tobago
+city370,Toronto,Canada
+city371,Auckland,New Zealand
+city372,Kaduna,Nigeria
+city373,Ijebu Ode,Nigeria
+city374,Kampala,Uganda
+city375,Somhlolo,Eswatini
+city376,Maseru,Lesotho
+city377,Montechoro,Portugal
+city378,İzmir,Turkey
+city379,Kuressaare,Estonia
+city380,Wavre,Belgium
+city381,East Rutherford,United States
+city382,San Jose,United States
+city383,Pasadena,United States
+city384,Foxborough,United States
+city385,Landover,United States
+city386,Portland,United States
+city387,Chicago,United States
+city388,Stanford,United States
+city389,Plasencia,Spain
+city390,Philippines,Philippines
+city391,Velika Kladuša,Bosnia and Herzegovina
+city392,Iloilo City,Philippines
+city393,Kauniainen,Finland
+city394,Valga,Estonia
+city395,Israel,Israel
+city396,Fürth,Germany
+city397,Umeå,Sweden
+city398,Cumbernauld,Scotland
+city399,Molodechno,Belarus
+city400,Castelfranco di Sotto,Italy
+city401,Oldenburg,Germany
+city402,Machelen,Belgium
+city403,Bosnia and Herzegovina,Bosnia and Herzegovina
+city404,Blšany,Czech Republic
+city405,Herzliya,Israel
+city406,Sesimbra,Portugal
+city407,Eindhoven,Netherlands
+city408,Barotac Nuevo,Philippines
+city409,Strusshamn,Norway
+city410,Isernia,Italy
+city411,Bacolod,Philippines
+city412,Martigues,France
+city413,Leiria,Portugal
+city414,Karditsa,Greece
+city415,Córdoba,Spain
+city416,Barnsley,England
+city417,Norwich,England
+city418,Ciney,Belgium
+city419,Almelo,Netherlands
+city420,Thônex,Switzerland
+city421,Frankfurt,Germany
+city422,Castanet-Tolosan,France
+city423,Horn,Austria
+city424,Sacavém,Portugal
+city425,Varberg,Sweden
+city426,Konin,Poland
+city427,Velika Gorica,Croatia
+city428,Ankara,Turkey
+city429,Vilagarcía de Arousa,Spain
+city430,Novi Sad,FR Yugoslavia
+city431,Arklow,Republic of Ireland
+city432,Nîmes,France
+city433,Mikkeli,Finland
+city434,Urbino,Italy
+city435,Zaprešić,Croatia
+city436,Pennsylvania,United States
+city437,Massachusetts,United States
+city438,Interlaken,Switzerland
+city439,Niš,FR Yugoslavia
+city440,Kentucky,United States
+city441,Mozyr,Belarus
+city442,Vranovice,Czech Republic
+city443,Minsk,Belarus
+city444,Libreville,Gabon
+city445,Saint Paul,Réunion
+city446,Casablanca,Morocco
+city447,Harare,Zimbabwe
+city448,Žiar nad Hronom,Slovakia
+city449,Canberra,Australia
+city450,Melbourne,Australia
+city451,Bük,Hungary
+city452,Wolvertem,Belgium
+city453,Brumov-Bylnice,Czech Republic
+city454,Jonkoping,Sweden
+city455,Palermo,Italy
+city456,Burgos,Spain
+city457,Borispol,Ukraine
+city458,Sierre,Switzerland
+city459,Alexandria,Egypt
+city460,Portalegre,Portugal
+city461,Algiers,Algeria
+city462,New Taipei City,Chinese Taipei
+city463,Erfurt,Germany
+city464,Aalen,Germany
+city465,Ulm,Germany
+city466,Reutlingen,Germany
+city467,Ferreiras,Portugal
+city468,Santo António,Portugal
+city469,Trinidad and Tobago,Trinidad and Tobago
+city470,Haiti,Haiti
+city471,Jamaica,Jamaica
+city472,Warri,Nigeria
+city473,Puerto Rico,Puerto Rico
+city474,El Salvador,El Salvador
+city475,Suriname,Suriname
+city476,Oghara,Nigeria
+city477,Dar es Salaam,Tanzania
+city478,Malabo,Equatorial Guinea
+city479,Bamako,Mali
+city480,Lusaka,Zambia
+city481,Addis Ababa,Ethiopia
+city482,Lubango,Angola
+city483,Dakar,Senegal
+city484,Asmara,Eritrea
+city485,São Tomé,São Tomé and Príncipe
+city486,Abidjan,Ivory Coast
+city487,Fullerton,United States
+city488,Victoria,Canada
+city489,Seattle,United States
+city490,Kinshasa,DR Congo
+city491,Rabat,Morocco
+city492,Bloemfontein,South Africa
+city493,Douala,Cameroon
+city494,Kumasi,Ghana
+city495,Yiwu,China PR
+city496,Wuhan,China PR
+city497,Shanghai,China PR
+city498,Guia,Portugal
+city499,Zwolle,Netherlands
+city500,Germany,Germany
+city501,Trento,Italy
+city502,Lima,Peru
+city503,Loja,Ecuador
+city504,Salta,Argentina
+city505,Kalmar,Sweden
+city506,Armenia,Armenia
+city507,Mandal,Norway
+city508,Breitenbach,Switzerland
+city509,Nelas,Portugal
+city510,Nakhon Sawan,Thailand
+city511,Iceland,Iceland
+city512,Vaasa,Finland
+city513,Eskilstuna,Sweden
+city514,Estonia,Estonia
+city515,France,France
+city516,Kazakhstan,Kazakhstan
+city517,Philadelphia,United States
+city518,Columbus,United States
+city519,Carson,United States
+city520,Frauenfeld,Switzerland
+city521,Subotica,Serbia and Montenegro
+city522,Croatia,Croatia
+city523,Czech Republic,Czech Republic
+city524,Ta' Qali,Malta
+city525,Železnik,Serbia and Montenegro
+city526,Las Rozas de Madrid,Spain
+city527,Gozo,Malta
+city528,Pombal,Portugal
+city529,Shenzhen,China PR
+city530,Mons,Belgium
+city531,Alginet,Spain
+city532,Strombeek-Bever,Belgium
+city533,La Roda,Spain
+city534,Setúbal,Portugal
+city535,Heverlee,Belgium
+city536,Bucharest,Romania
+city537,Hamrun,Malta
+city538,Uherské Hradiště,Czech Republic
+city539,Vogošća,Bosnia and Herzegovina
+city540,Helsinki,Finland
+city541,Trapani,Italy
+city542,Farum,Denmark
+city543,Wezep,Netherlands
+city544,Livingston,Scotland
+city545,Blida,Algeria
+city546,Volos,Greece
+city547,Patras,Greece
+city548,Heraklio,Greece
+city549,Thessaloniki,Greece
+city550,Athens,Greece
+city551,Visp,Switzerland
+city552,Pretoria,South Africa
+city553,Germiston,South Africa
+city554,Niš,Serbia and Montenegro
+city555,Kruševac,Serbia and Montenegro
+city556,Katwijk,Netherlands
+city557,Otopeni,Romania
+city558,Jakobstad,Finland
+city559,Crotone,Italy
+city560,Brazzaville,Congo
+city561,Blantyre,Malawi
+city562,Čáslav,Czech Republic
+city563,Växjö,Sweden
+city564,Vila Real de San Antonio,Portugal
+city565,Faro-Loulé,Portugal
+city566,Blackpool,England
+city567,Warrington,England
+city568,Preston,England
+city569,Hanoi,Vietnam
+city570,Benin,Benin
+city571,Senegal,Senegal
+city572,Malawi,Malawi
+city573,Togo,Togo
+city574,Barbados,Barbados
+city575,Estádio Algarve,Portugal
+city576,Antigua and Barbuda,Antigua and Barbuda
+city577,Cayman Islands,Cayman Islands
+city578,Ivory Coast,Ivory Coast
+city579,Nairobi,Kenya
+city580,Chingola,Zambia
+city581,Netherlands Antilles,Netherlands Antilles
+city582,Equatorial Guinea,Equatorial Guinea
+city583,Lomé,Togo
+city584,Guinea,Guinea
+city585,British Virgin Islands,British Virgin Islands
+city586,US Virgin Islands,US Virgin Islands
+city587,Aruba,Aruba
+city588,Dominican Republic,Dominican Republic
+city589,Mexico,Mexico
+city590,Arima,Trinidad and Tobago
+city591,Panama,Panama
+city592,Adelaide,Australia
+city593,Annaba,Algeria
+city594,Kasarani,Kenya
+city595,Cotonou,Benin
+city596,Port of Spain,Trinidad and Tobago
+city597,Delta,Nigeria
+city598,Ughelli,Nigeria
+city599,Adana,Turkey
+city600,Mersin,Turkey
+city601,Sarajevo,Bosnia and Herzegovina
+city602,Junglinster,Luxembourg
+city603,Mondercange,Luxembourg
+city604,Mogoşoaia,Romania
+city605,Strumica,Macedonia
+city606,Lubumbashi,DR Congo
+city607,Tarsus,Turkey
+city608,Ettelbruck,Luxembourg
+city609,Mamer,Luxembourg
+city610,Chiajna,Romania
+city611,Vila Real de Santo Antonio,Portugal
+city612,Mensdorf,Luxembourg
+city613,Hostert,Luxembourg
+city614,Lae,Papua New Guinea
+city615,Senec,Slovakia
+city616,Debrecen,Hungary
+city617,Dravograd,Slovenia
+city618,Bulle,Switzerland
+city619,Freistadt,Austria
+city620,Zug,Switzerland
+city621,Haverfordwest,Wales
+city622,Ramat Gan,Israel
+city623,Gillingham,England
+city624,Coleraine,Northern Ireland
+city625,Mariupol,Ukraine
+city626,Mogoșoaia,Romania
+city627,Krasnoarmeysk,Russia
+city628,Kutno,Poland
+city629,Anger,Austria
+city630,Belgrade,Serbia
+city631,Volendam,Netherlands
+city632,Gleisdorf,Austria
+city633,Chengdu,China PR
+city634,Hangzhou,China PR
+city635,Tianjin,China PR
+city636,Gurgaon,India
+city637,Singapore,Singapore
+city638,Walsall,England
+city639,Pilsen,Czech Republic
+city640,Viborg,Denmark
+city641,Stavanger,Norway
+city642,Teheran,Iran
+city643,Paroi,Vietnam
+city644,Rhyl,Wales
+city645,Lübeck,Germany
+city646,Parma,Italy
+city647,Dessel,Belgium
+city648,Shrewsbury,England
+city649,Aranda de Duero,Spain
+city650,Villacidro,Italy
+city651,Rio Maior,Portugal
+city652,Newport,Wales
+city653,Abrantes,Portugal
+city654,Lurgan,Northern Ireland
+city655,Doncaster,England
+city656,Ho Chi Minh City,Vietnam
+city657,Nakhon Ratchasima,Thailand
+city658,Miskolc,Hungary
+city659,Maasmechelen,Belgium
+city660,Ath,Belgium
+city661,Madrid,Spain
+city662,Székesfehérvár,Hungary
+city663,Póvoa de Varzim,Portugal
+city664,Örebro,Sweden
+city665,Eupen,Belgium
+city666,Saint-Brieuc,France
+city667,Oberdorf,Switzerland
+city668,Fão,Portugal
+city669,Buftea,Romania
+city670,Newry,Northern Ireland
+city671,Oradea,Romania
+city672,Kragujevac,Serbia
+city673,Kassel,Germany
+city674,Amstetten,Austria
+city675,Chernihiv,Ukraine
+city676,Bray,Republic of Ireland
+city677,Beit She'an,Israel
+city678,Ludgeřovice,Czech Republic
+city679,Shenyang,China PR
+city680,Qinhuangdao,China PR
+city681,Beijing,China PR
+city682,The Hague,Netherlands
+city683,La Roche-sur-Yon,France
+city684,Trelleborg,Sweden
+city685,Zamora,Spain
+city686,Montereale Valcellina,Italy
+city687,Prague 20,Czech Republic
+city688,Edinburgh,Scotland
+city689,Gubbio,Italy
+city690,Nalchik,Russia
+city691,Bata,Equatorial Guinea
+city692,Kuala Lumpur,Malaysia
+city693,Hsinying City,Chinese Taipei
+city694,Lahti,Finland
+city695,Daveyton,South Africa
+city696,Parchal,Portugal
+city697,Pikine,Senegal
+city698,Windhoek,Namibia
+city699,Gaborone,Botswana
+city700,St. John's,Antigua and Barbuda
+city701,Bayamón,Puerto Rico
+city702,Salé,Morocco
+city703,Georgetown,Guyana
+city704,Benguela,Angola
+city705,Santo Domingo,Dominican Republic
+city706,Bridgetown,Barbados
+city707,Antigua Guatemala,Guatemala
+city708,Managua,Nicaragua
+city709,Marabella,Trinidad and Tobago
+city710,Koléa,Algeria
+city711,Tunis,Tunisia
+city712,Abuja,Nigeria
+city713,Havana,Cuba
+city714,Tembisa,South Africa
+city715,Cancún,Mexico
+city716,Latacunga,Ecuador
+city717,Ambato,Ecuador
+city718,Riobamba,Ecuador
+city719,Azogues,Ecuador
+city720,Cuenca,Ecuador
+city721,Quito,Ecuador
+city722,Chongqing,China PR
+city723,Sinsheim,Germany
+city724,Berlin,Germany
+city725,Wolfsburg,Germany
+city726,Leverkusen,Germany
+city727,Dresden,Germany
+city728,Augsburg,Germany
+city729,Mönchengladbach,Germany
+city730,Ness Ziona,Israel
+city731,Shymkent,Kazakhstan
+city732,Yerevan,Armenia
+city733,Vöcklabruck,Austria
+city734,Racibórz,Poland
+city735,Nadderud,Norway
+city736,Velsen-Zuid,Netherlands
+city737,Swindon,England
+city738,Prilep,Macedonia
+city739,Nowy Sącz,Poland
+city740,Pápa,Hungary
+city741,Lovech,Bulgaria
+city742,Vrbovec,Croatia
+city743,Domžale,Slovenia
+city744,Písek,Czech Republic
+city745,Treviso,Italy
+city746,Sosnowiec,Poland
+city747,Troyes,France
+city748,Bruck an der Mur,Austria
+city749,Barcelos,Portugal
+city750,Pruszków,Poland
+city751,Wiesbaden,Germany
+city752,Jakovo,Serbia
+city753,Ivančna Gorica,Slovenia
+city754,Trani,Italy
+city755,Izmir,Turkey
+city756,Motril,Spain
+city757,Sevastopol,Ukraine
+city758,Soliman,Tunisia
+city759,Cartaxo,Portugal
+city760,Podolsk,Russia
+city761,Ferrara,Italy
+city762,Mannheim,Germany
+city763,Le Havre,France
+city764,Tondela,Portugal
+city765,Caen,France
+city766,Venlo,Netherlands
+city767,Wiener Neustadt,Austria
+city768,Côte d'Ivoire,Ivory Coast
+city769,Morocco,Morocco
+city770,Ethiopia,Ethiopia
+city771,Zimbabwe,Zimbabwe
+city772,Tanzania,Tanzania
+city773,Nigeria,Nigeria
+city774,Sarpsborg,Norway
+city775,Otepää,Estonia
+city776,Chernigiv,Ukraine
+city777,Cameroon,Cameroon
+city778,Toruń,Poland
+city779,Szombathely,Hungary
+city780,Wrexham,Wales
+city781,Velenje,Slovenia
+city782,Cardiff,United Kingdom
+city783,Coventry,United Kingdom
+city784,Glasgow,United Kingdom
+city785,London,United Kingdom
+city786,Newcastle,United Kingdom
+city787,Manchester,United Kingdom
+city788,Haapsalu,Estonia
+city789,Karagandy,Kazakhstan
+city790,Guingamp,France
+city791,Lendava,Slovenia
+city792,Sankt Pölten,Austria
+city793,Khimki,Russia
+city794,Duisburg,Germany
+city795,Inđija,Serbia
+city796,Rostov-on-Don,Russia
+city797,Dhaka,Bangladesh
+city798,Al-Ram,Palestine
+city799,Riffa,Bahrain
+city800,Amman,Jordan
+city801,António,Portugal
+city802,Halmstad,Sweden
+city803,Norrköping,Sweden
+city804,6th October City,Egypt
+city805,Ouagadougou,Burkina Faso
+city806,Kigali,Rwanda
+city807,Bizerte,Tunisia
+city808,Machakos,Kenya
+city809,Mitsamiouli,Comoros
+city810,Ziguinchor,Senegal
+city811,Tamale,Ghana
+city812,Kansas City,United States
+city813,Bridgeview,United States
+city814,Washington,United States
+city815,Chester,United States
+city816,Kokopo,Papua New Guinea
+city817,Orhei,Luxembourg
+city818,Vadul lui Vodă,Moldova
+city819,Ħamrun,Georgia
+city820,Ħamrun,Andorra
+city821,Orhei,Lithuania
+city822,Ħamrun,Faroe Islands
+city823,Vadul lui Vodă,Luxembourg
+city824,Orhei,Latvia
+city825,Ħamrun,Malta
+city826,Ta' Qali,Andorra
+city827,Edmonton,Canada
+city828,Ottawa,Canada
+city829,Vancouver,Canada
+city830,Winnipeg,Canada
+city831,Moncton,Canada
+city832,Orhei,Moldova
+city833,Erzurum,Turkey
+city834,Tartu,Estonia
+city835,Halle,Germany
+city836,La Spezia,Italy
+city837,Ajdovščina,Slovenia
+city838,Le Mans,France
+city839,Tbilisi,Georgia
+city840,Leuven,Belgium
+city841,Astana,Kazakhstan
+city842,Kranj,Slovenia
+city843,Skopje,Macedonia
+city844,Fier,Albania
+city845,Lviv,Ukraine
+city846,Tychy,Poland
+city847,Lod,Israel
+city848,Motherwell,Scotland
+city849,Zenica,Bosnia and Herzegovina
+city850,Ålesund,Norway
+city851,Sandhausen,Germany
+city852,Moreira de Cónegos,Portugal
+city853,Chomutov,Czech Republic
+city854,Biel/Bienne,Switzerland
+city855,Pećinci,Serbia
+city856,Fethiye,Turkey
+city857,Stara Pazova,Serbia
+city858,Estoril,Portugal
+city859,Tirana,Albania
+city860,Felcsút,Hungary
+city861,Bristol,England
+city862,Rijeka,Croatia
+city863,Badajoz,Spain
+city864,Neuchâtel,Switzerland
+city865,Petrovac,Montenegro
+city866,Trikala,Greece
+city867,Tampa,United States
+city868,Elbasan,Albania
+city869,Lobatse,Botswana
+city870,Sousse,Libya
+city871,Nashville,United States
+city872,Boca Raton,United States
+city873,Oued Ellil,Tunisia
+city874,Curepipe,Mauritius
+city875,Steyr,Austria
+city876,Covilhã,Portugal
+city877,Pitești,Romania
+city878,Poprad,Slovakia
+city879,Győr,Hungary
+city880,Valenciennes,France
+city881,Saint Petersburg,Russia
+city882,Opava,Czech Republic
+city883,Łódź,Poland
+city884,Falkirk,Scotland
+city885,Valkeakoski,Finland
+city886,Rennes,France
+city887,Jablonec nad Nisou,Czech Republic
+city888,Antalya,Turkey
+city889,Koprivnica,Croatia
+city890,Gori,Georgia
+city891,Rio de Janeiro,Brazil
+city892,São Paulo,Brazil
+city893,Belo Horizonte,Brazil
+city894,Manaus,Brazil
+city895,Brasília,Brazil
+city896,Salvador,Brazil
+city897,Cluj-Napoca,Romania
+city898,Chișinău,Moldova
+city899,Molde,Norway
+city900,Trofa,Portugal
+city901,Ulsteinvik,Norway
+city902,Leganés,Spain
+city903,Paris,France
+city904,Włocławek,Poland
+city905,Vercelli,Italy
+city906,Limbe,Cameroon
+city907,Harrison,United States
+city908,Dushanbe,Tajikistan
+city909,Pyongyang,North Korea
+city910,Vilnius,Lithuania
+city911,Tórshavn,Faroe Islands
+city912,Utrecht,Netherlands
+city913,Doetinchem,Netherlands
+city914,Breda,Netherlands
+city915,Deventer,Netherlands
+city916,Tilburg,Netherlands
+city917,Enschede,Netherlands
+city918,Łęczna,Poland
+city919,Fredrikstad,Norway
+city920,Ingolstadt,Germany
+city921,Birkenhead,England
+city922,Varaždin,Croatia
+city923,Ústí nad Labem,Czech Republic
+city924,Kruševac,Serbia
+city925,Aspach,Germany
+city926,Znojmo,Czech Republic
+city927,Castel di Sangro,Italy
+city928,Penafiel,Portugal
+city929,Maria Enzersdorf,Austria
+city930,Cardiff,Wales
+city931,Shkodër,Albania
+city932,Schaffhausen,Switzerland
+city933,Balmazújváros,Hungary
+city934,Colchester,England
+city935,Žilina,Slovakia
+city936,Nijmegen,Netherlands
+city937,La Serena,Ecuador
+city938,La Serena,Chile
+city939,Coquimbo,Ecuador
+city940,Coquimbo,Chile
+city941,Zadar,Croatia
+city942,Southampton,England
+city943,Portadown,Northern Ireland
+city944,Cary,United States
+city945,San Cristóbal,Dominican Republic
+city946,Couva,Trinidad and Tobago
+city947,Edinburg,United States
+city948,Leonora,Guyana
+city949,Murcia,Spain
+city950,Florence,Italy
+city951,Kielce,Poland
+city952,Heerenveen,Netherlands
+city953,Botoșani,Romania
+city954,Zemun,Serbia
+city955,Bakau,Gambia
+city956,Bangui,Central African Republic
+city957,Lautoka,Fiji
+city958,Kingston,Jamaica
+city959,Bradenton,United States
+city960,Santander,Spain
+city961,Pavlodar,Kazakhstan
+city962,Mielec,Poland
+city963,Ternopil,Ukraine
+city964,Felgueiras,Portugal
+city965,Logroño,Spain
+city966,Frisco,United States
+city967,Lobamba,Eswatini
+city968,Sarandí,Argentina
+city969,Panama City,Panama
+city970,Cape Coast,Ghana
+city971,Koné,New Caledonia
+city972,Maré,New Caledonia
+city973,Lifou,New Caledonia
+city974,Meizhou,China PR
+city975,Reims,France
+city976,Grenoble,France
+city977,Nice,France
+city978,Décines-Charpieu,France
+city979,Calais,France
+city980,Faro/Loulé,Portugal
